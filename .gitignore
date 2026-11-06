@@ -6,3 +6,4 @@ public/songs
 public/LICENSE.txt
 src/songs.json
 .DS_Store
+.env*
