@@ -1,0 +1,21 @@
+name: Reportar un error o sugerir una mejora
+description: Algo no funciona, hay un error en una partitura o tiene una idea para el sitio.
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: ¿Qué desea contarnos?
+      description: Si se trata de una nota, un acorde o un texto, indique en qué compás está.
+    validations:
+      required: true
+  - type: input
+    id: link
+    attributes:
+      label: Enlace
+      description: Si se refiere a un tema, pegue la dirección de la página. Incluye el tono que estaba viendo.
+  - type: input
+    id: device
+    attributes:
+      label: Dispositivo y navegador
+      description: Si algo no funciona, nos ayuda a reproducirlo.
+      placeholder: iPhone, Safari

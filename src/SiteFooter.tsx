@@ -4,12 +4,8 @@ import { SCORES_SOURCE, SITE_NAME } from './seo.ts'
 const REPO_URL = 'https://github.com/steinsleger/tangos-a-la-parrilla'
 const CONTACT_EMAIL = 'asteins@gmail.com'
 
-const newIssueUrl = (template: string) => `${REPO_URL}/issues/new?template=${template}.yml`
-
 const FEEDBACK_LINKS = [
-  { label: 'Reportar un error', href: newIssueUrl('bug_report') },
-  { label: 'Sugerir una mejora', href: newIssueUrl('feature_request') },
-  { label: 'Pedir un tango', href: newIssueUrl('song_request') },
+  { label: 'Reportar un error o sugerir una mejora', href: `${REPO_URL}/issues/new?template=feedback.yml` },
   { label: 'Escribir por correo', href: `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(SITE_NAME)}` },
 ]
 
@@ -25,7 +21,7 @@ export function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="site-footer-inner">
-        <h2>¿Encontró un error o falta un tango?</h2>
+        <h2>¿Encontró un error o tiene una sugerencia?</h2>
         <ul className="feedback-links">
           {FEEDBACK_LINKS.map(({ label, href }) => (
             <li key={label}>

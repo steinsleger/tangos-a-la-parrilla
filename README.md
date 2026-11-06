@@ -50,7 +50,7 @@ Para agregar un tema, expórtelo desde Sibelius como MusicXML, déjelo en `score
 
 ### Comentarios
 
-Su opinión es muy útil. Puede [reportar un error](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=bug_report.yml), [sugerir una mejora](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=feature_request.yml) o [pedir un tango](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=song_request.yml). Si no tiene cuenta de GitHub, escriba a [asteins@gmail.com](mailto:asteins@gmail.com).
+Su opinión es muy útil. Puede [reportar un error o sugerir una mejora](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=feedback.yml). Si no tiene cuenta de GitHub, escriba a [asteins@gmail.com](mailto:asteins@gmail.com).
 
 Para colaborar con código, consulte [CONTRIBUTING.md](CONTRIBUTING.md).
 
@@ -112,7 +112,7 @@ To add a song, export it from Sibelius as MusicXML, place it in `scores/`, add i
 
 ### Feedback
 
-Your feedback helps. You can [report a bug](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=bug_report.yml), [suggest an improvement](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=feature_request.yml) or [request a song](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=song_request.yml). If you don't have a GitHub account, write to [asteins@gmail.com](mailto:asteins@gmail.com).
+Your feedback helps. You can [report a bug or suggest an improvement](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=feedback.yml). If you don't have a GitHub account, write to [asteins@gmail.com](mailto:asteins@gmail.com).
 
 To contribute code, see [CONTRIBUTING.md](CONTRIBUTING.md).
 

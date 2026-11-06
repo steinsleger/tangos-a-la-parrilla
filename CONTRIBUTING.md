@@ -4,7 +4,7 @@
 
 ## Español
 
-Para reportar errores o pedir temas no hace falta programar: use los [formularios de GitHub](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new/choose) o escriba a [asteins@gmail.com](mailto:asteins@gmail.com).
+Para reportar errores o sugerir mejoras no hace falta programar: use el [formulario de GitHub](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=feedback.yml) o escriba a [asteins@gmail.com](mailto:asteins@gmail.com).
 
 Para colaborar con código:
 
@@ -17,7 +17,7 @@ La rama `main` está protegida: todo cambio entra por pull request y necesita la
 
 ## English
 
-You don't need to code to report a bug or request a song: use the [GitHub forms](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new/choose) or write to [asteins@gmail.com](mailto:asteins@gmail.com).
+You don't need to code to report a bug or suggest an improvement: use the [GitHub form](https://github.com/steinsleger/tangos-a-la-parrilla/issues/new?template=feedback.yml) or write to [asteins@gmail.com](mailto:asteins@gmail.com).
 
 To contribute code:
 

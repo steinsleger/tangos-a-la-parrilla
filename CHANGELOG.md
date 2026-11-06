@@ -17,7 +17,7 @@ First public release, by Adrián Steinsleger, developed with Claude Opus 5.5. Th
 - Prerendered pages with real URLs, plus titles, descriptions, canonical URLs, social previews, structured data, a sitemap and robots.txt.
 - Spanish and English descriptions in the structured data.
 - Links to Todo Tango for songs, composers and lyricists.
-- Feedback links for bugs, improvements and song requests.
+- Feedback link for bugs and improvements.
 - Author and license credits.
 
 ### Fixed
