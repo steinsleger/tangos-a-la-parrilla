@@ -1,0 +1,9 @@
+# 3 days, the window in which npm lets authors unpublish and most malicious releases get caught.
+minimumReleaseAge: 4320
+
+# Fails the install if a package loses its provenance or trusted-publisher status.
+trustPolicy: no-downgrade
+
+allowBuilds:
+  # Optional native OSMD dependency for server-side rendering. The browser never loads it.
+  gl: false

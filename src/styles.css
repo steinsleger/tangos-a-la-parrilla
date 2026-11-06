@@ -1,0 +1,381 @@
+:root {
+  --paper: #f7f3ec;
+  --ink: #231c1a;
+  --muted: #6b5f55;
+  --rule: #ddd3c5;
+  --accent: #7b1e2b;
+  --on-accent: #fff;
+  --original: #f1e3bf;
+  --on-original: #54400f;
+  --serif: Georgia, 'Times New Roman', serif;
+  --gutter: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+h1 {
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px var(--gutter) 48px;
+}
+
+.page-wide {
+  max-width: 1040px;
+}
+
+.site-title {
+  font-size: clamp(2rem, 6vw, 2.75rem);
+}
+
+.site-intro {
+  margin: 8px 0 0;
+  color: var(--muted);
+}
+
+.search {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-top: 16px;
+  padding: 8px 0;
+  background: var(--paper);
+}
+
+.search input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+.song-list {
+  margin: 8px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.song-list a {
+  display: block;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--rule);
+  text-decoration: none;
+}
+
+.song-list a:hover .song-title {
+  color: var(--accent);
+}
+
+.song-title {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.song-credits {
+  display: block;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.song-credits span:not(:last-child)::after {
+  content: ' \00b7  ';
+}
+
+.back-link {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.back-link::before {
+  content: '\2039\00a0';
+}
+
+.song-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 12px 0 20px;
+}
+
+.song-header h1 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+.song-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.print-button {
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.sheet-frame {
+  position: relative;
+  min-height: 100vh;
+}
+
+.sheet-status {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  margin: 0;
+  color: var(--muted);
+}
+
+.sheet {
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.key-select {
+  position: relative;
+}
+
+.key-button {
+  min-height: 44px;
+  padding: 8px 36px 8px 14px;
+  border: 1px solid var(--muted);
+  border-radius: 6px;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  position: relative;
+}
+
+.key-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-70%) rotate(45deg);
+}
+
+.key-list {
+  position: absolute;
+  z-index: 2;
+  top: calc(100% + 4px);
+  right: 0;
+  width: 200px;
+  max-height: 70vh;
+  margin: 0;
+  padding: 4px;
+  overflow-y: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgb(35 28 26 / 18%);
+  list-style: none;
+}
+
+.key-list:focus {
+  outline: none;
+}
+
+.key-option {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  min-height: 40px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.key-option + .key-option {
+  margin-top: 2px;
+}
+
+.key-option[data-original='true'] {
+  background: var(--original);
+  color: var(--on-original);
+}
+
+.key-option[data-selected='true'] {
+  background: var(--accent);
+  color: var(--on-accent);
+  font-weight: 600;
+}
+
+.key-option[data-active='true'] {
+  outline: 2px solid currentColor;
+  outline-offset: -2px;
+}
+
+.key-check {
+  flex: none;
+  width: 16px;
+  height: 16px;
+}
+
+.key-name {
+  flex: 1;
+}
+
+.key-badge {
+  padding: 0 8px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 400;
+}
+
+.site-footer {
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.site-footer-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px var(--gutter) 32px;
+}
+
+.site-footer p {
+  margin: 0 0 4px;
+}
+
+.site-footer h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 400;
+}
+
+.feedback-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 20px;
+  margin: 8px 0 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.feedback-links a {
+  display: inline-block;
+  padding: 8px 0;
+  color: var(--accent);
+}
+
+
+@page {
+  size: A4;
+  margin: 15mm;
+}
+
+@media print {
+  body {
+    background: #fff;
+  }
+
+  .print-button,
+  .back-link,
+  .site-footer,
+  .todotango-link,
+  .key-button::after {
+    display: none;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  .page::before {
+    content: 'Tangos a la parrilla · tangosalaparrilla.com.ar · Adrián Steinsleger · Fuente: Cancionero del Tango, de Hugo Satorre';
+    font-family: var(--serif);
+    font-size: 0.75rem;
+  }
+
+  .song-header {
+    margin: 4px 0;
+  }
+
+  .song-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .song-credits a {
+    text-decoration: none;
+  }
+
+  .song-credits span:not(:last-child):has(+ a)::after {
+    content: none;
+  }
+
+  .key-button {
+    min-height: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .sheet-frame {
+    min-height: 0;
+  }
+
+  .sheet {
+    width: 100% !important;
+    overflow: visible;
+    border: 0;
+  }
+
+  .sheet > div {
+    break-inside: avoid;
+  }
+
+  .sheet svg {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+  }
+}

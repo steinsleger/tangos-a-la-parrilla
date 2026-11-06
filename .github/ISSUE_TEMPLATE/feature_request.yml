@@ -1,0 +1,15 @@
+name: Sugerir una mejora
+description: Una idea para hacer el sitio más útil.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: ¿Qué le gustaría que hiciera el sitio?
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: ¿Para qué le serviría?
+      description: Cuéntenos qué estaba intentando hacer.
