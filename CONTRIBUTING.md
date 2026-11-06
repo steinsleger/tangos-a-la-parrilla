@@ -13,7 +13,7 @@ Para colaborar con código:
 3. Ejecute `pnpm test` y `pnpm build` antes de abrir el pull request.
 4. Agregue los cambios visibles para los usuarios a [CHANGELOG.md](CHANGELOG.md).
 
-Las convenciones del proyecto están en [AGENTS.md](AGENTS.md). Al contribuir, usted acepta que su aporte se publique bajo la misma [licencia](LICENSE) del proyecto.
+La rama `main` está protegida: todo cambio entra por pull request y necesita la aprobación de Adrián Steinsleger. Las convenciones del proyecto están en [AGENTS.md](AGENTS.md). Al contribuir, usted acepta que su aporte se publique bajo la misma [licencia](LICENSE) del proyecto.
 
 ## English
 
@@ -26,4 +26,4 @@ To contribute code:
 3. Run `pnpm test` and `pnpm build` before opening a pull request.
 4. Add user-facing changes to [CHANGELOG.md](CHANGELOG.md).
 
-The project's conventions are in [AGENTS.md](AGENTS.md). By contributing, you agree that your work is published under the project's [license](LICENSE).
+The `main` branch is protected: every change goes through a pull request and needs Adrián Steinsleger's approval. The project's conventions are in [AGENTS.md](AGENTS.md). By contributing, you agree that your work is published under the project's [license](LICENSE).
