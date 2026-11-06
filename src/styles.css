@@ -326,23 +326,16 @@ a {
     background: #fff;
   }
 
-  .print-button,
+  .song-actions,
   .back-link,
   .site-footer,
-  .todotango-link,
-  .key-button::after {
+  .todotango-link {
     display: none;
   }
 
   .page {
     max-width: none;
     padding: 0;
-  }
-
-  .page::before {
-    content: 'Tangos a la parrilla · tangosalaparrilla.com.ar · Adrián Steinsleger · Fuente: Cancionero del Tango, de Hugo Satorre';
-    font-family: var(--serif);
-    font-size: 0.75rem;
   }
 
   .song-header {
@@ -363,12 +356,6 @@ a {
 
   .song-credits span:not(:last-child):has(+ a)::after {
     content: none;
-  }
-
-  .key-button {
-    min-height: 0;
-    padding: 0;
-    border: 0;
   }
 
   .sheet-frame {

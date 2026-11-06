@@ -17,7 +17,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 
 ### Map
 
-- `scores/`: source files. The initial set comes from the project Cancionero del Tango by Hugo Satorre, so keep that credit in the footer, the PDF, `README.md` and `LICENSE`. Never edit them. Filenames are mojibake, so metadata comes from the file contents.
+- `scores/`: source files. The initial set comes from the project Cancionero del Tango by Hugo Satorre, so keep that credit in the footer, `README.md` and `LICENSE`. Never edit them. Filenames are mojibake, so metadata comes from the file contents.
 - `scripts/build-songs.mjs`: converts UTF-16 MusicXML to UTF-8, extracts metadata, repairs the data and writes `public/sitemap.xml`, which is committed so it stays visible in the repository.
 - `scripts/spelling.mjs`: spelling fixes. A word that is only wrong in context goes in with its phrase.
 - `scripts/credits.json`: author and lyricist of every song. The `people` keys in `src/todotango.json` are these displayed names, so a change here must be made there too.
@@ -38,7 +38,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - The first client render must match the prerendered HTML, so read the URL and localStorage in effects, never during render.
 - A URL with `?tono=` is canonicalized to the song's clean URL. Do not create pages per key.
 - Every page needs its own title and meta description. All visible text is in Spanish; English only appears in the structured data. Descriptions stay in metadata: never show them on the page, and never hide text from users to show it to search engines.
-- PDF export is `window.print()`. `SheetMusic` paginates on `beforeprint` so no staff is split, and restores on `afterprint`.
+- PDF export is `window.print()`. `SheetMusic` paginates on `beforeprint` so no staff is split, and restores on `afterprint`. The PDF only shows the title, the credits and the score: no site header and no key label.
 - The interface is in formal Spanish: address the user as `usted`, never as `vos` or `tú`.
 - In documents, do not break lines in the middle of a sentence.
 
@@ -75,7 +75,7 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 
 ### Mapa
 
-- `scores/`: archivos fuente. La carga inicial proviene del proyecto Cancionero del Tango, de Hugo Satorre, así que ese crédito debe mantenerse en el pie, el PDF, `README.md` y `LICENSE`. No se editan nunca. Los nombres están mal codificados, así que los metadatos salen del contenido.
+- `scores/`: archivos fuente. La carga inicial proviene del proyecto Cancionero del Tango, de Hugo Satorre, así que ese crédito debe mantenerse en el pie, `README.md` y `LICENSE`. No se editan nunca. Los nombres están mal codificados, así que los metadatos salen del contenido.
 - `scripts/build-songs.mjs`: pasa MusicXML de UTF-16 a UTF-8, extrae metadatos, repara los datos y escribe `public/sitemap.xml`, que se versiona para que quede visible en el repositorio.
 - `scripts/spelling.mjs`: correcciones ortográficas. Una palabra que solo está mal según el contexto se agrega con su frase.
 - `scripts/credits.json`: autor y letrista de cada tema. Las claves de `people` en `src/todotango.json` son estos nombres visibles, así que un cambio aquí debe hacerse también allí.
@@ -96,7 +96,7 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 - El primer render en el cliente debe coincidir con el HTML pre-renderizado, así que la URL y localStorage se leen en efectos, nunca durante el render.
 - Una URL con `?tono=` tiene como canónica la URL limpia del tema. No cree páginas por tono.
 - Cada página necesita título y `meta description` propios. Todo el texto visible está en castellano; el inglés solo aparece en los datos estructurados. Las descripciones van solo en los metadatos: no se muestran en la página, y nunca se oculta texto a los usuarios para mostrárselo a los buscadores.
-- La exportación a PDF es `window.print()`. `SheetMusic` pagina en `beforeprint` para no cortar pentagramas y restaura en `afterprint`.
+- La exportación a PDF es `window.print()`. `SheetMusic` pagina en `beforeprint` para no cortar pentagramas y restaura en `afterprint`. El PDF solo muestra el título, los créditos y la partitura: sin encabezado del sitio ni indicación de tono.
 - La interfaz está en castellano formal: se trata al usuario de `usted`, nunca de `vos` ni de `tú`.
 - En los documentos, no corte las líneas en medio de una oración.
 
