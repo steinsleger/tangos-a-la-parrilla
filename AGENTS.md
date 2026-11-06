@@ -20,7 +20,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - `scores/`: source files. The initial set comes from the project Cancionero del Tango by Hugo Satorre, so keep that credit in the footer, the PDF, `README.md` and `LICENSE`. Never edit them. Filenames are mojibake, so metadata comes from the file contents.
 - `scripts/build-songs.mjs`: converts UTF-16 MusicXML to UTF-8, extracts metadata, repairs the data and writes `public/sitemap.xml`, which is committed so it stays visible in the repository.
 - `scripts/spelling.mjs`: spelling fixes. A word that is only wrong in context goes in with its phrase.
-- `scripts/names.mjs`: full names of authors and lyricists, checked against Todo Tango. The keys in `src/todotango.json` are these displayed names, so a change here must be made there too.
+- `scripts/credits.json`: author and lyricist of every song. The `people` keys in `src/todotango.json` are these displayed names, so a change here must be made there too.
 - `scripts/prerender.mjs`: writes every page into `dist/`.
 - `src/seo.ts`: titles, descriptions, structured data and sitemap. `src/Head.tsx`: head tags. `src/entry-server.tsx`: the list of pages.
 - `src/todotango.json`: links to Todo Tango. A song is only linked if the work's page there names one of its credited authors, because many titles are shared by different works.
@@ -29,6 +29,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 
 ### Rules
 
+- Todo Tango is the authority on credits. When it differs from a source file or from anything else, Todo Tango wins, including its spelling of names. Copy a song's credits exactly from the page of that work.
 - Fix data in the build scripts, not in `scores/` or the generated files, which are gitignored.
 - Use `IntervalTransposeCalculator`. The default one misspells leading tones.
 - In OSMD 2.2.1 `render()` does not apply a transposition. Set `Sheet.Transpose`, then call `updateGraphic()` and `render()`.
@@ -77,7 +78,7 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 - `scores/`: archivos fuente. La carga inicial proviene del proyecto Cancionero del Tango, de Hugo Satorre, así que ese crédito debe mantenerse en el pie, el PDF, `README.md` y `LICENSE`. No se editan nunca. Los nombres están mal codificados, así que los metadatos salen del contenido.
 - `scripts/build-songs.mjs`: pasa MusicXML de UTF-16 a UTF-8, extrae metadatos, repara los datos y escribe `public/sitemap.xml`, que se versiona para que quede visible en el repositorio.
 - `scripts/spelling.mjs`: correcciones ortográficas. Una palabra que solo está mal según el contexto se agrega con su frase.
-- `scripts/names.mjs`: nombres completos de autores y letristas, verificados con Todo Tango. Las claves de `src/todotango.json` son estos nombres visibles, así que un cambio aquí debe hacerse también allí.
+- `scripts/credits.json`: autor y letrista de cada tema. Las claves de `people` en `src/todotango.json` son estos nombres visibles, así que un cambio aquí debe hacerse también allí.
 - `scripts/prerender.mjs`: escribe cada página en `dist/`.
 - `src/seo.ts`: títulos, descripciones, datos estructurados y sitemap. `src/Head.tsx`: etiquetas del encabezado HTML. `src/entry-server.tsx`: la lista de páginas.
 - `src/todotango.json`: enlaces a Todo Tango. Un tema solo se enlaza si la página de la obra nombra a alguno de sus autores, porque muchos títulos son compartidos por obras distintas.
@@ -86,6 +87,7 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 
 ### Reglas
 
+- Todo Tango es la autoridad en cuanto a créditos. Si difiere de un archivo fuente o de cualquier otra referencia, prevalece Todo Tango, incluso en la grafía de los nombres. Los créditos de un tema se copian tal cual de la página de esa obra.
 - Los datos se corrigen en los scripts de build, no en `scores/` ni en los archivos generados, que están en `.gitignore`.
 - Use `IntervalTransposeCalculator`. El calculador por defecto escribe mal las sensibles.
 - En OSMD 2.2.1 `render()` no aplica la transposición. Hay que asignar `Sheet.Transpose` y llamar a `updateGraphic()` y `render()`.

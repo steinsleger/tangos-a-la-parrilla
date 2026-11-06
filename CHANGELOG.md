@@ -25,8 +25,7 @@ First public release, by Adrián Steinsleger, developed with Claude Opus 5.5. Th
 - Spanish spelling in titles, credits and score notes, mainly missing accents.
 - Chord symbols that Sibelius exported as plain text, which could not be transposed.
 - Two titles that were wrong in the source files.
-- Full names for authors and lyricists, checked against Todo Tango.
-- Author and lyricist swapped in 10 songs.
+- Author and lyricist credits now follow Todo Tango, which prevails over the source files.
 
 ### Known issues
 

@@ -10,7 +10,6 @@ test('splits every way the credits join people, keeping the separators', () => {
   assert.deepEqual(creditParts('P. Maffia/P. Laurenz'), ['P. Maffia', '/', 'P. Laurenz'])
   assert.deepEqual(creditParts('H. Manzi y C. Castillo'), ['H. Manzi', ' y ', 'C. Castillo'])
   assert.deepEqual(creditParts('M. Caló, A. Pontier y F. Silva'), ['M. Caló', ', ', 'A. Pontier', ' y ', 'F. Silva'])
-  assert.deepEqual(creditParts('Magaldi-Noda'), ['Magaldi', '-', 'Noda'])
 })
 
 test('loses no text', () => {

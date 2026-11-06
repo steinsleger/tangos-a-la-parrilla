@@ -1,7 +1,7 @@
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { sitemap } from '../src/seo.ts'
-import { fullNames } from './names.mjs'
+import credits from './credits.json' with { type: 'json' }
 import { fixSpelling } from './spelling.mjs'
 
 const SOURCE_DIR = 'scores'
@@ -13,20 +13,6 @@ const WRONG_SOURCE_TITLES = {
   'Campo afuera cancionero.xml': 'Campo afuera',
   'El dia que me quieras cancionero.xml': 'El día que me quieras',
 }
-
-// The source credits the lyricist first in these songs, the reverse of every other file.
-const LYRICIST_CREDITED_FIRST = new Set([
-  'alma-en-pena',
-  'bandoneon-arrabalero',
-  'el-bulin-de-la-calle-ayacucho',
-  'en-carne-propia',
-  'fuimos',
-  'guitarra-guitarra-mia',
-  'prohibido',
-  'ventarron',
-  'y-todavia-te-quiero',
-  'zorro-gris',
-])
 
 const rootStep = (letter) => `<root-step>${letter}</root-step>`
 const harmony = (root, kind, bass = '') => `<harmony><root>${root}</root><kind>${kind}</kind>${bass}</harmony>`
@@ -71,21 +57,14 @@ const isUtf16 = (bytes) => bytes[0] === 0xff && bytes[1] === 0xfe
 function parseSong(xml, fileName) {
   const title = WRONG_SOURCE_TITLES[fileName] ?? collapseWhitespace(readTag(xml, /<movement-title>(.*?)<\/movement-title>/s))
   // Line 1 is the author and line 2 the lyricist. The file's own <creator type='lyricist'> holds junk.
-  const [first = '', second = ''] = readTag(xml, /<creator type='composer'>(.*?)<\/creator>/s)
+  const [author = '', lyricist = ''] = readTag(xml, /<creator type='composer'>(.*?)<\/creator>/s)
     .split('\n')
     .map(collapseWhitespace)
     .filter(Boolean)
   const slug = slugify(title)
-  const [author, lyricist] = LYRICIST_CREDITED_FIRST.has(slug) ? [second, first] : [first, second]
   const [, fifths, mode] = xml.match(/<fifths>(-?\d+)<\/fifths>\s*<mode>(\w+)<\/mode>/)
-  return {
-    slug,
-    title,
-    author: fullNames(author),
-    lyricist: fullNames(lyricist),
-    fifths: Number(fifths),
-    mode,
-  }
+  // Todo Tango prevails over the file, so these credits only stand until the song is added to credits.json.
+  return { slug, title, author, lyricist, ...credits[slug], fifths: Number(fifths), mode }
 }
 
 rmSync(OUTPUT_DIR, { recursive: true, force: true })

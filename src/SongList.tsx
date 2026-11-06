@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { songPath } from './route.ts'
 import { matches } from './search.ts'
-import { HOME_SUMMARY } from './seo.ts'
+import { HOME_SUMMARY, SITE_NAME } from './seo.ts'
 import { creditsOf, songs } from './songs.ts'
 
 export function SongList() {
@@ -10,8 +10,9 @@ export function SongList() {
 
   return (
     <main className="page">
-      <h1 className="site-title">Índice alfabético</h1>
+      <h1 className="site-title">{SITE_NAME}</h1>
       <p className="site-intro">{HOME_SUMMARY.es}</p>
+      <h2 className="index-title">Índice alfabético</h2>
       <div className="search">
         <input
           type="search"

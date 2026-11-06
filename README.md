@@ -44,11 +44,9 @@ El resultado es un sitio estático con una página HTML por tema, publicado en [
 
 ### Partituras
 
-La carga inicial de partituras proviene del proyecto [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/), de Hugo Satorre. Los archivos originales están en [`scores/`](scores) y no se modifican. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) los convierte en lo que usa el sitio y aplica las correcciones. La ortografía se corrige en [`scripts/spelling.mjs`](scripts/spelling.mjs) y los nombres completos están en [`scripts/names.mjs`](scripts/names.mjs).
+La carga inicial de partituras proviene del proyecto [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/), de Hugo Satorre. Los archivos originales están en [`scores/`](scores) y no se modifican. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) los convierte en lo que usa el sitio y aplica las correcciones. La ortografía se corrige en [`scripts/spelling.mjs`](scripts/spelling.mjs). Los créditos de cada tema están en [`scripts/credits.json`](scripts/credits.json) y siguen a [Todo Tango](https://www.todotango.com), que prevalece cuando difiere de los archivos originales.
 
-Para agregar un tema, expórtelo desde Sibelius como MusicXML, déjelo en `scores/` y ejecute `pnpm songs`.
-
-`Afiches`, `Grisel` y `Siempre se vuelve a Buenos Aires` todavía no aparecen en el índice porque sus archivos son binarios de Sibelius y hay que volver a exportarlos.
+Para agregar un tema, expórtelo desde Sibelius como MusicXML, déjelo en `scores/`, agregue sus créditos a `scripts/credits.json` y ejecute `pnpm songs`.
 
 ### Comentarios
 
@@ -108,11 +106,9 @@ The output is a static site with one HTML page per song, deployed on [Vercel](ht
 
 ### Scores
 
-The initial set of scores comes from the project [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/) by Hugo Satorre. The source files live in [`scores/`](scores) and are never edited. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) turns them into what the site uses and applies the repairs. Spelling is corrected in [`scripts/spelling.mjs`](scripts/spelling.mjs) and full names live in [`scripts/names.mjs`](scripts/names.mjs).
+The initial set of scores comes from the project [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/) by Hugo Satorre. The source files live in [`scores/`](scores) and are never edited. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) turns them into what the site uses and applies the repairs. Spelling is corrected in [`scripts/spelling.mjs`](scripts/spelling.mjs). Each song's credits live in [`scripts/credits.json`](scripts/credits.json) and follow [Todo Tango](https://www.todotango.com), which prevails over the source files when they differ.
 
-To add a song, export it from Sibelius as MusicXML, place it in `scores/` and run `pnpm songs`.
-
-`Afiches`, `Grisel` and `Siempre se vuelve a Buenos Aires` are not in the index yet: their files are binary Sibelius files and need to be exported again.
+To add a song, export it from Sibelius as MusicXML, place it in `scores/`, add its credits to `scripts/credits.json` and run `pnpm songs`.
 
 ### Feedback
 

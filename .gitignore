@@ -1,7 +1,6 @@
 node_modules
 dist
 .vercel
-nombres-completos.md
 public/songs
 public/LICENSE.txt
 src/songs.json

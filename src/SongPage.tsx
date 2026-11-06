@@ -4,7 +4,7 @@ import { KeySelect } from './KeySelect.tsx'
 import { chosenKey, keyOptions, originalKey } from './keys.ts'
 import { rememberedKey, rememberKey } from './rememberedKeys.ts'
 import { keyFromUrl, songUrl } from './route.ts'
-import { songTitle } from './seo.ts'
+import { SITE_NAME, songTitle } from './seo.ts'
 import { SheetMusic } from './SheetMusic.tsx'
 import type { Song } from './songs.ts'
 import { personOnTodoTango, songOnTodoTango } from './todotango.ts'
@@ -72,7 +72,7 @@ export function SongPage({ song }: { song: Song }) {
   return (
     <main className="page page-wide">
       <a className="back-link" href="/">
-        Índice
+        {SITE_NAME}: índice alfabético
       </a>
       <header className="song-header">
         <div>

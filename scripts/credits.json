@@ -1,0 +1,1554 @@
+{
+  "a-homero": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "a-la-gran-muneca": {
+    "author": "Jesús Ventura",
+    "lyricist": "Miguel Osés"
+  },
+  "a-media-luz": {
+    "author": "Edgardo Donato",
+    "lyricist": "Carlos Lenzi"
+  },
+  "a-quien-le-puede-importar": {
+    "author": "Mariano Mores",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "a-un-semejante": {
+    "author": "Eladia Blázquez",
+    "lyricist": "Eladia Blázquez"
+  },
+  "abandono": {
+    "author": "Pedro Maffia",
+    "lyricist": "Homero Manzi"
+  },
+  "absurdo": {
+    "author": "Virgilio Expósito",
+    "lyricist": "Homero Expósito"
+  },
+  "acquaforte": {
+    "author": "Horacio Pettorossi",
+    "lyricist": "Juan Carlos Marambio Catán"
+  },
+  "adios-corazon": {
+    "author": "Lalo Etchegoncelay",
+    "lyricist": "Héctor Sapelli"
+  },
+  "adios-muchachos": {
+    "author": "Julio César Sanders",
+    "lyricist": "César Vedani"
+  },
+  "adios-pampa-mia": {
+    "author": "Francisco Canaro y Mariano Mores",
+    "lyricist": "Ivo Pelay"
+  },
+  "ahora-no-me-conoces": {
+    "author": "Armando Baliotti",
+    "lyricist": "Carlos Giampé"
+  },
+  "al-compas-del-corazon": {
+    "author": "Domingo Federico",
+    "lyricist": "Homero Expósito"
+  },
+  "al-mundo-le-falta-un-tornillo": {
+    "author": "José María Aguilar",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "alguien-le-dice-al-tango": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Jorge Luis Borges"
+  },
+  "alla-en-el-bajo": {
+    "author": "Agustín Magaldi y Pedro Noda",
+    "lyricist": "Ismael Aguilar y Gerónimo Martinelli Massa"
+  },
+  "alma-de-bohemio": {
+    "author": "Roberto Firpo",
+    "lyricist": "Juan Andrés Caruso"
+  },
+  "alma-de-loca": {
+    "author": "Guillermo Cavazza",
+    "lyricist": "Jacinto Font"
+  },
+  "alma-en-pena": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "almita-herida": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "amarras": {
+    "author": "Carlos Marchisio",
+    "lyricist": "Carmelo Santiago"
+  },
+  "amores-de-estudiante": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera y Mario Battistella"
+  },
+  "amurado": {
+    "author": "Pedro Maffia y Pedro Laurenz",
+    "lyricist": "José De Grandis"
+  },
+  "anclao-en-paris": {
+    "author": "Guillermo Barbieri",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "antiguo-reloj-de-cobre": {
+    "author": "Eduardo Marvezi",
+    "lyricist": "Eduardo Marvezi"
+  },
+  "apologia-tanguera": {
+    "author": "Rosita Quiroga",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "arrabal-amargo": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "asi-se-baila-el-tango": {
+    "author": "Elías Randal",
+    "lyricist": "Marvil"
+  },
+  "atenti-pebeta": {
+    "author": "Ciriaco Ortiz",
+    "lyricist": "Celedonio Flores"
+  },
+  "ave-de-paso": {
+    "author": "Charlo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "azabache": {
+    "author": "Enrique Francini y Héctor Stamponi",
+    "lyricist": "Homero Expósito"
+  },
+  "bailemos": {
+    "author": "Pascual Mamone y Francisco Mamone",
+    "lyricist": "Reinaldo Yiso"
+  },
+  "bajo-belgrano": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "bajo-el-cono-azul": {
+    "author": "Alfredo De Angelis",
+    "lyricist": "Carmelo Volpe"
+  },
+  "bajo-un-cielo-de-estrellas": {
+    "author": "Enrique Francini y Héctor Stamponi",
+    "lyricist": "José María Contursi"
+  },
+  "balada-para-un-loco": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Horacio Ferrer"
+  },
+  "bandoneon-arrabalero": {
+    "author": "Bachicha",
+    "lyricist": "Pascual Contursi"
+  },
+  "barrio-de-tango": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Homero Manzi"
+  },
+  "barrio-pobre": {
+    "author": "Vicente Belvedere",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "barrio-reo": {
+    "author": "Roberto Fugazot",
+    "lyricist": "Alfredo Navarrine"
+  },
+  "besos-brujos": {
+    "author": "Alfredo Malerba y Rodolfo Sciammarella",
+    "lyricist": "Alfredo Malerba y Rodolfo Sciammarella"
+  },
+  "bien-criolla-y-bien-portena": {
+    "author": "Armando Pontier",
+    "lyricist": "Homero Expósito"
+  },
+  "bien-de-abajo": {
+    "author": "Arturo Penón",
+    "lyricist": "Héctor Negro"
+  },
+  "bomboncito": {
+    "author": "Antonio Romano y Jorge Cerioti",
+    "lyricist": "Luis Caruso"
+  },
+  "buscandote": {
+    "author": "Lalo Scalise",
+    "lyricist": "Lalo Scalise"
+  },
+  "cada-vez-que-me-recuerdes": {
+    "author": "Mariano Mores",
+    "lyricist": "José María Contursi"
+  },
+  "cafe-la-humedad": {
+    "author": "Cacho Castaña",
+    "lyricist": "Cacho Castaña"
+  },
+  "cafetin-de-buenos-aires": {
+    "author": "Mariano Mores",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "callejon": {
+    "author": "Roberto Grela",
+    "lyricist": "Héctor Marcó"
+  },
+  "cambalache": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "caminito": {
+    "author": "Juan de Dios Filiberto",
+    "lyricist": "Gabino Coria Peñaloza"
+  },
+  "campo-afuera": {
+    "author": "Rodolfo Biagi",
+    "lyricist": "Homero Manzi"
+  },
+  "cancion-desesperada": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "canto-de-amor": {
+    "author": "Osvaldo Fresedo",
+    "lyricist": "Emilio Fresedo"
+  },
+  "cantor-de-mi-barrio": {
+    "author": "Juan José Riverol y Francisco Loiacono",
+    "lyricist": "Juan José Riverol y Francisco Loiacono"
+  },
+  "caricias": {
+    "author": "Juan Martí",
+    "lyricist": "Alfredo Bigeschi"
+  },
+  "carnaval": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "caseron-de-tejas": {
+    "author": "Sebastián Piana",
+    "lyricist": "Cátulo Castillo"
+  },
+  "cautivo": {
+    "author": "Egidio Pittaluga",
+    "lyricist": "Luis Rubistein"
+  },
+  "charlemos": {
+    "author": "Luis Rubistein",
+    "lyricist": "Luis Rubistein"
+  },
+  "chau-no-va-mas": {
+    "author": "Virgilio Expósito",
+    "lyricist": "Homero Expósito"
+  },
+  "che-bandoneon": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Homero Manzi"
+  },
+  "chiquilin-de-bachin": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Horacio Ferrer"
+  },
+  "chorra": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "cicatrices": {
+    "author": "Adolfo Avilés",
+    "lyricist": "Enrique Maroni"
+  },
+  "claudinette": {
+    "author": "Enrique Delfino",
+    "lyricist": "Julián Centeya"
+  },
+  "cobardia": {
+    "author": "Charlo",
+    "lyricist": "Luis César Amadori"
+  },
+  "como-abrazado-a-un-rencor": {
+    "author": "Rafael Rossi",
+    "lyricist": "Antonio Podestá"
+  },
+  "como-dos-extranos": {
+    "author": "Pedro Laurenz",
+    "lyricist": "José María Contursi"
+  },
+  "con-toda-la-voz-que-tengo": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Enrique Dizeo"
+  },
+  "confesion": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo y Luis César Amadori"
+  },
+  "corazon-de-oro": {
+    "author": "Francisco Canaro",
+    "lyricist": "Jesús Fernández Blanco"
+  },
+  "corazon-de-papel": {
+    "author": "Cátulo Castillo",
+    "lyricist": "Alberto Franco"
+  },
+  "corazon-no-le-hagas-caso": {
+    "author": "Armando Pontier",
+    "lyricist": "Carlos Bahr"
+  },
+  "cornetin": {
+    "author": "Pedro Maffia",
+    "lyricist": "Homero Manzi y Cátulo Castillo"
+  },
+  "corrientes-y-esmeralda": {
+    "author": "Francisco Pracánico",
+    "lyricist": "Celedonio Flores"
+  },
+  "cosas-olvidadas": {
+    "author": "Antonio Rodio",
+    "lyricist": "José María Contursi"
+  },
+  "cristal": {
+    "author": "Mariano Mores",
+    "lyricist": "José María Contursi"
+  },
+  "cuando-tallan-los-recuerdos": {
+    "author": "Rafael Rossi",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "cuando-tu-no-estas": {
+    "author": "Carlos Gardel y Marcel Lattes",
+    "lyricist": "Alfredo Le Pera y Mario Battistella"
+  },
+  "cuartito-azul": {
+    "author": "Mariano Mores",
+    "lyricist": "Mario Battistella"
+  },
+  "cuatro-compases": {
+    "author": "Atilio Bruni",
+    "lyricist": "Oscar Rubens"
+  },
+  "cuesta-abajo": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "dandy": {
+    "author": "Lucio Demare",
+    "lyricist": "Agustín Irusta y Roberto Fugazot"
+  },
+  "de-barro": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "de-mi-barrio": {
+    "author": "Roberto Goyheneche",
+    "lyricist": "Roberto Goyheneche"
+  },
+  "de-puro-curda": {
+    "author": "Carlos Olmedo",
+    "lyricist": "Abel Aznar"
+  },
+  "de-que-podemos-hablar": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Abel Aznar"
+  },
+  "derecho-viejo": {
+    "author": "Eduardo Arolas",
+    "lyricist": "Gabriel Clausi"
+  },
+  "desde-el-alma": {
+    "author": "Rosita Melo",
+    "lyricist": "Homero Manzi y Víctor Piuma Vélez"
+  },
+  "desencuentro": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "despues": {
+    "author": "Hugo Gutiérrez",
+    "lyricist": "Homero Manzi"
+  },
+  "destellos": {
+    "author": "Francisco Canaro",
+    "lyricist": "Juan Andrés Caruso"
+  },
+  "divina": {
+    "author": "Joaquín Mora",
+    "lyricist": "Juan De La Calle"
+  },
+  "duelo-criollo": {
+    "author": "Juan Rezzano",
+    "lyricist": "Lito Bayardo"
+  },
+  "duerme": {
+    "author": "Hugo Gutiérrez",
+    "lyricist": "Homero Manzi"
+  },
+  "el-abrojito": {
+    "author": "Luis Bernstein",
+    "lyricist": "Jesús Fernández Blanco"
+  },
+  "el-adios": {
+    "author": "Maruja Pacheco Huergo",
+    "lyricist": "Virgilio San Clemente"
+  },
+  "el-aguacero": {
+    "author": "Cátulo Castillo",
+    "lyricist": "José González Castillo"
+  },
+  "el-bulin-de-la-calle-ayacucho": {
+    "author": "José Servidio y Luis Servidio",
+    "lyricist": "Celedonio Flores"
+  },
+  "el-cantor-de-buenos-aires": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "el-choclo": {
+    "author": "Ángel Villoldo",
+    "lyricist": "Enrique Santos Discépolo y Juan Carlos Marambio Catán"
+  },
+  "el-cielo-en-tus-ojos": {
+    "author": "Juan Martí",
+    "lyricist": "Alfredo Bigeschi"
+  },
+  "el-ciruja": {
+    "author": "Ernesto de la Cruz",
+    "lyricist": "Alfredo Marino"
+  },
+  "el-corazon-al-sur": {
+    "author": "Eladia Blázquez",
+    "lyricist": "Eladia Blázquez"
+  },
+  "el-dia-que-me-quieras": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "el-encopao": {
+    "author": "Osvaldo Pugliese",
+    "lyricist": "Enrique Dizeo"
+  },
+  "el-gordo-triste": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Horacio Ferrer"
+  },
+  "el-milagro": {
+    "author": "Armando Pontier",
+    "lyricist": "Homero Expósito"
+  },
+  "el-motivo": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Pascual Contursi"
+  },
+  "el-panuelito": {
+    "author": "Juan de Dios Filiberto",
+    "lyricist": "Gabino Coria Peñaloza"
+  },
+  "el-pescante": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "el-portenito": {
+    "author": "Ángel Villoldo",
+    "lyricist": "Ángel Villoldo"
+  },
+  "el-que-atraso-el-reloj": {
+    "author": "Guillermo Barbieri",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "el-sueno-del-pibe": {
+    "author": "Juan Puey",
+    "lyricist": "Reinaldo Yiso"
+  },
+  "el-titere": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Jorge Luis Borges"
+  },
+  "el-ultimo-cafe": {
+    "author": "Héctor Stamponi",
+    "lyricist": "Cátulo Castillo"
+  },
+  "el-ultimo-organito": {
+    "author": "Acho Manzi",
+    "lyricist": "Homero Manzi"
+  },
+  "el-vals-sonador": {
+    "author": "Armando Pontier",
+    "lyricist": "Oscar Rubens"
+  },
+  "el-viejo-vals": {
+    "author": "Charlo",
+    "lyricist": "José González Castillo"
+  },
+  "en-carne-propia": {
+    "author": "Manuel Sucher",
+    "lyricist": "Carlos Bahr"
+  },
+  "en-esta-noche-de-luna": {
+    "author": "José García y Graciano Gómez",
+    "lyricist": "Héctor Marcó"
+  },
+  "en-esta-tarde-gris": {
+    "author": "Mariano Mores",
+    "lyricist": "José María Contursi"
+  },
+  "en-las-sombras": {
+    "author": "Joaquín Mora",
+    "lyricist": "Manuel Meaños"
+  },
+  "en-un-beso-la-vida": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Héctor Marcó"
+  },
+  "enfunda-la-mandolina": {
+    "author": "Francisco Pracánico",
+    "lyricist": "José Zubiría Mansilla"
+  },
+  "ensuenos": {
+    "author": "Luis Brighenti",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "esquinas-portenas": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "esta-noche-me-emborracho": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "fangal": {
+    "author": "Enrique Santos Discépolo y Virgilio Expósito",
+    "lyricist": "Enrique Santos Discépolo y Homero Expósito"
+  },
+  "farol": {
+    "author": "Virgilio Expósito",
+    "lyricist": "Homero Expósito"
+  },
+  "farolito-de-papel": {
+    "author": "Mario Lespés y Teófilo Lespés",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "flor-de-lino": {
+    "author": "Héctor Stamponi",
+    "lyricist": "Homero Expósito"
+  },
+  "flores-del-alma": {
+    "author": "Juan Larenza",
+    "lyricist": "Alfredo Lucero Palacios y Lito Bayardo"
+  },
+  "flores-negras": {
+    "author": "Francisco De Caro",
+    "lyricist": "Mario César Gomila"
+  },
+  "fruta-amarga": {
+    "author": "Hugo Gutiérrez",
+    "lyricist": "Homero Manzi"
+  },
+  "fueron-tres-anos": {
+    "author": "Juan Pablo Marín",
+    "lyricist": "Juan Pablo Marín"
+  },
+  "fueye": {
+    "author": "Charlo",
+    "lyricist": "Homero Manzi"
+  },
+  "fuimos": {
+    "author": "José Dames",
+    "lyricist": "Homero Manzi"
+  },
+  "fumando-espero": {
+    "author": "Juan Viladomat",
+    "lyricist": "Félix Garzo"
+  },
+  "galleguita": {
+    "author": "Horacio Pettorossi",
+    "lyricist": "Alfredo Navarrine"
+  },
+  "garganta-con-arena": {
+    "author": "Cacho Castaña",
+    "lyricist": "Cacho Castaña"
+  },
+  "garras": {
+    "author": "Aníbal Troilo",
+    "lyricist": "José María Contursi"
+  },
+  "garua": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "garufa": {
+    "author": "Juan Antonio Collazo",
+    "lyricist": "Víctor Soliño y Roberto Fontaina"
+  },
+  "gime-el-viento": {
+    "author": "Atilio Bruni",
+    "lyricist": "Oscar Rubens"
+  },
+  "gloria": {
+    "author": "Humberto Canaro",
+    "lyricist": "Armando Tagini"
+  },
+  "golgota": {
+    "author": "Rodolfo Biagi",
+    "lyricist": "Francisco Gorrindo"
+  },
+  "golondrinas": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "gota-de-lluvia": {
+    "author": "Félix Lipesker",
+    "lyricist": "Homero Manzi"
+  },
+  "griseta": {
+    "author": "Enrique Delfino",
+    "lyricist": "José González Castillo"
+  },
+  "guitarra-guitarra-mia": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "haragan": {
+    "author": "Enrique Delfino",
+    "lyricist": "Manuel Romero y Luis Bayón Herrera"
+  },
+  "hasta-siempre-amor": {
+    "author": "Donato Racciatti",
+    "lyricist": "Federico Silva"
+  },
+  "infamia": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "inspiracion": {
+    "author": "Peregrino Paulos",
+    "lyricist": "Luis Rubistein"
+  },
+  "intimas": {
+    "author": "Alfonso Lacueva",
+    "lyricist": "Ricardo Brignolo"
+  },
+  "invierno": {
+    "author": "Horacio Pettorossi",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "jacinto-chiclana": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Jorge Luis Borges"
+  },
+  "jamas-retornaras": {
+    "author": "Osmar Maderna y Miguel Caló",
+    "lyricist": "Osmar Maderna y Miguel Caló"
+  },
+  "junto-a-tu-corazon": {
+    "author": "Enrique Francini y Héctor Stamponi",
+    "lyricist": "José María Contursi"
+  },
+  "justo-el-31": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "la-abandone-y-no-sabia": {
+    "author": "José Canet",
+    "lyricist": "José Canet"
+  },
+  "la-cancion-de-buenos-aires": {
+    "author": "Orestes Cúfaro y Azucena Maizani",
+    "lyricist": "Manuel Romero"
+  },
+  "la-cantina": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "la-capilla-blanca": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Héctor Marcó"
+  },
+  "la-casita-de-mis-viejos": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "la-cumparsita-si-supieras": {
+    "author": "Gerardo Matos Rodríguez",
+    "lyricist": "Pascual Contursi y Enrique Maroni"
+  },
+  "la-luz-de-un-fosforo": {
+    "author": "Alberto Suárez Villanueva",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "la-mariposa": {
+    "author": "Pedro Maffia",
+    "lyricist": "Celedonio Flores"
+  },
+  "la-mentirosa": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "la-morocha": {
+    "author": "Enrique Saborido",
+    "lyricist": "Ángel Villoldo"
+  },
+  "la-noche-que-te-fuiste": {
+    "author": "Osmar Maderna",
+    "lyricist": "José María Contursi"
+  },
+  "la-novia-ausente": {
+    "author": "Guillermo Barbieri",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "la-pulpera-de-santa-lucia": {
+    "author": "Enrique Maciel",
+    "lyricist": "Héctor Blomberg"
+  },
+  "la-ultima-cita": {
+    "author": "Agustín Bardi",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "la-ultima-copa": {
+    "author": "Francisco Canaro",
+    "lyricist": "Juan Andrés Caruso"
+  },
+  "la-ultima-curda": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "la-ultima-grela": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Horacio Ferrer"
+  },
+  "la-vi-llegar": {
+    "author": "Enrique Francini",
+    "lyricist": "Julián Centeya"
+  },
+  "las-cuarenta": {
+    "author": "Roberto Grela",
+    "lyricist": "Francisco Gorrindo"
+  },
+  "lejana-tierra-mia": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "lejos-de-buenos-aires": {
+    "author": "Alberto Suárez Villanueva",
+    "lyricist": "Oscar Rubens"
+  },
+  "lloraras-lloraras": {
+    "author": "Hugo Gutiérrez",
+    "lyricist": "Homero Manzi"
+  },
+  "lluvia-de-abril": {
+    "author": "Enrique Francini",
+    "lyricist": "Julián Centeya"
+  },
+  "lo-han-visto-con-otra": {
+    "author": "Horacio Pettorossi",
+    "lyricist": "Horacio Pettorossi"
+  },
+  "loca": {
+    "author": "Manuel Jovés",
+    "lyricist": "Antonio Viergol"
+  },
+  "los-cosos-de-al-lao": {
+    "author": "Marcos Larrosa y José Canet",
+    "lyricist": "Marcos Larrosa y José Canet"
+  },
+  "los-despojos": {
+    "author": "José Dames",
+    "lyricist": "Horacio Sanguinetti"
+  },
+  "los-mareados": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "los-pajaros-perdidos": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Mario Trejo"
+  },
+  "madame-ivonne": {
+    "author": "Eduardo Pereyra",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "madreselva": {
+    "author": "Francisco Canaro",
+    "lyricist": "Luis César Amadori"
+  },
+  "madrugada": {
+    "author": "Fernando Rolón",
+    "lyricist": "Fernando Rolón"
+  },
+  "mala-entrana": {
+    "author": "Enrique Maciel",
+    "lyricist": "Celedonio Flores"
+  },
+  "mala-suerte": {
+    "author": "Francisco Lomuto",
+    "lyricist": "Francisco Gorrindo"
+  },
+  "malena": {
+    "author": "Lucio Demare",
+    "lyricist": "Homero Manzi"
+  },
+  "malevaje": {
+    "author": "Juan de Dios Filiberto",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "malvon": {
+    "author": "Oscar Arona",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "manana-zarpa-un-barco": {
+    "author": "Lucio Demare",
+    "lyricist": "Homero Manzi"
+  },
+  "mananitas-de-montmartre": {
+    "author": "Lucio Demare",
+    "lyricist": "Roberto Fugazot y Agustín Irusta"
+  },
+  "mano-a-mano": {
+    "author": "Carlos Gardel y José Razzano",
+    "lyricist": "Celedonio Flores"
+  },
+  "mano-brava": {
+    "author": "Manuel Buzón",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "manoblanca": {
+    "author": "Antonio De Bassi",
+    "lyricist": "Homero Manzi"
+  },
+  "maquillaje": {
+    "author": "Virgilio Expósito",
+    "lyricist": "Homero Expósito"
+  },
+  "margarita-gauthier": {
+    "author": "Joaquín Mora",
+    "lyricist": "Julio Jorge Nelson"
+  },
+  "margo": {
+    "author": "Armando Pontier",
+    "lyricist": "Homero Expósito"
+  },
+  "maria": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "marion": {
+    "author": "Luis Rubistein",
+    "lyricist": "Luis Rubistein"
+  },
+  "marioneta": {
+    "author": "Juan José Guichandut",
+    "lyricist": "Armando Tagini"
+  },
+  "mariposita": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "mas-alla-de-mi-rencor": {
+    "author": "Lucio Demare",
+    "lyricist": "Julián Centeya"
+  },
+  "mas-solo-que-nunca": {
+    "author": "Federico Leone",
+    "lyricist": "Enrique Dizeo"
+  },
+  "me-quede-mirandola": {
+    "author": "Vicente Spina",
+    "lyricist": "Roberto Miró"
+  },
+  "media-noche": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Héctor Gagliardi"
+  },
+  "melodia-de-arrabal": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera y Mario Battistella"
+  },
+  "mensaje": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "mi-buenos-aires-querido": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "mi-ciudad-y-mi-gente": {
+    "author": "Eladia Blázquez",
+    "lyricist": "Eladia Blázquez"
+  },
+  "mi-dolor": {
+    "author": "Carlos Marcucci",
+    "lyricist": "Manuel Meaños"
+  },
+  "mi-luna": {
+    "author": "Carlos Olmedo",
+    "lyricist": "Lito Bayardo"
+  },
+  "mi-noche-triste": {
+    "author": "Samuel Castriota",
+    "lyricist": "Pascual Contursi"
+  },
+  "mi-refugio": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Pedro Numa Córdoba"
+  },
+  "mi-taza-de-cafe": {
+    "author": "Alfredo Malerba",
+    "lyricist": "Homero Manzi"
+  },
+  "mi-vieja-viola": {
+    "author": "Humberto Correa",
+    "lyricist": "Humberto Correa"
+  },
+  "milonga-de-mis-amores": {
+    "author": "Pedro Laurenz",
+    "lyricist": "José María Contursi"
+  },
+  "milonga-del-900": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "milonga-sentimental": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "milonga-triste": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "milonguero-viejo": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Enrique Carrera Sotelo"
+  },
+  "milonguita": {
+    "author": "Enrique Delfino",
+    "lyricist": "Samuel Linnig"
+  },
+  "mimi-pinson": {
+    "author": "Aquiles Roggero",
+    "lyricist": "José Rótulo"
+  },
+  "mirinaque": {
+    "author": "Alberto Mastra",
+    "lyricist": "Alberto Mastra"
+  },
+  "mocosita": {
+    "author": "Gerardo Matos Rodríguez",
+    "lyricist": "Víctor Soliño"
+  },
+  "moneda-de-cobre": {
+    "author": "Carlos Viván",
+    "lyricist": "Horacio Sanguinetti"
+  },
+  "muneca-brava": {
+    "author": "Luis Visca",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "n-p": {
+    "author": "Juan José Riverol y Francisco Loiacono",
+    "lyricist": "Juan José Riverol y Francisco Loiacono"
+  },
+  "nada": {
+    "author": "José Dames",
+    "lyricist": "Horacio Sanguinetti"
+  },
+  "nada-mas": {
+    "author": "Juan D'Arienzo y Luis Rubistein",
+    "lyricist": "Juan D'Arienzo y Luis Rubistein"
+  },
+  "naranjo-en-flor": {
+    "author": "Virgilio Expósito",
+    "lyricist": "Homero Expósito"
+  },
+  "negra-maria": {
+    "author": "Lucio Demare",
+    "lyricist": "Homero Manzi"
+  },
+  "nido-gaucho": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Héctor Marcó"
+  },
+  "niebla-del-riachuelo": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "ninguna": {
+    "author": "Raúl Fernández Siro",
+    "lyricist": "Homero Manzi"
+  },
+  "no-hay-tierra-como-la-mia": {
+    "author": "Charlo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "no-me-pregunten-por-que": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Reynaldo Pignataro"
+  },
+  "nobleza-de-arrabal": {
+    "author": "Francisco Canaro",
+    "lyricist": "Homero Manzi"
+  },
+  "nostalgias": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "nunca-tuvo-novio": {
+    "author": "Agustín Bardi",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "oigo-tu-voz": {
+    "author": "Mario Canaro",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "ojos-negros": {
+    "author": "Vicente Greco",
+    "lyricist": "Pedro Numa Córdoba"
+  },
+  "olvido": {
+    "author": "Luis Rubistein",
+    "lyricist": "Luis César Amadori"
+  },
+  "oro-y-plata": {
+    "author": "Charlo",
+    "lyricist": "Homero Manzi"
+  },
+  "pa-que-bailen-los-muchachos": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "pa-que-sepan-como-soy": {
+    "author": "Emilio González",
+    "lyricist": "Norberto Aroldi"
+  },
+  "paciencia": {
+    "author": "Juan D'Arienzo",
+    "lyricist": "Francisco Gorrindo"
+  },
+  "paisaje": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "pajaro-ciego": {
+    "author": "Antonio Bonavena",
+    "lyricist": "Lito Bayardo"
+  },
+  "palermo": {
+    "author": "Enrique Delfino",
+    "lyricist": "Juan Villalba y Hermido Braga"
+  },
+  "palomita-blanca": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "pampero": {
+    "author": "Osvaldo Fresedo",
+    "lyricist": "Edmundo Bianchi"
+  },
+  "papa-baltasar": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "parece-mentira": {
+    "author": "Francisco Canaro",
+    "lyricist": "Homero Manzi"
+  },
+  "pasional": {
+    "author": "Jorge Caldara",
+    "lyricist": "Mario Soto"
+  },
+  "pastora": {
+    "author": "Alfredo De Angelis",
+    "lyricist": "José Rótulo"
+  },
+  "patio-mio": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "patotero-sentimental": {
+    "author": "Manuel Jovés",
+    "lyricist": "Manuel Romero"
+  },
+  "pedacito-de-cielo": {
+    "author": "Enrique Francini y Héctor Stamponi",
+    "lyricist": "Homero Expósito"
+  },
+  "pena-mulata": {
+    "author": "Sebastián Piana",
+    "lyricist": "Homero Manzi"
+  },
+  "pequena": {
+    "author": "Osmar Maderna",
+    "lyricist": "Homero Expósito"
+  },
+  "percal": {
+    "author": "Domingo Federico",
+    "lyricist": "Homero Expósito"
+  },
+  "pero-yo-se": {
+    "author": "Azucena Maizani",
+    "lyricist": "Azucena Maizani"
+  },
+  "pigmalion": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Homero Expósito"
+  },
+  "pobre-flor-primera-ilusion": {
+    "author": "Luis Mottolese",
+    "lyricist": "Víctor Spindola"
+  },
+  "poema": {
+    "author": "Eduardo Bianco y Mario Melfi",
+    "lyricist": "Mario Melfi y Eduardo Bianco"
+  },
+  "por-la-vuelta": {
+    "author": "José Tinelli",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "por-una-cabeza": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "porteno-y-bailarin": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "Héctor Marcó"
+  },
+  "pregonera": {
+    "author": "Alfredo De Angelis",
+    "lyricist": "José Rótulo"
+  },
+  "prohibido": {
+    "author": "Manuel Sucher",
+    "lyricist": "Carlos Bahr"
+  },
+  "pucherito-de-gallina": {
+    "author": "Roberto Medina",
+    "lyricist": "Roberto Medina"
+  },
+  "puente-alsina": {
+    "author": "Benjamín Tagle Lara",
+    "lyricist": "Benjamín Tagle Lara"
+  },
+  "que-buena-fe": {
+    "author": "Eladia Blázquez",
+    "lyricist": "Eladia Blázquez"
+  },
+  "que-falta-que-me-haces": {
+    "author": "Armando Pontier y Miguel Caló",
+    "lyricist": "Federico Silva"
+  },
+  "que-me-van-a-hablar-de-amor": {
+    "author": "Héctor Stamponi",
+    "lyricist": "Homero Expósito"
+  },
+  "que-solo-estoy": {
+    "author": "Raúl Kaplún",
+    "lyricist": "Roberto Miró"
+  },
+  "que-te-importa-que-te-llore": {
+    "author": "Miguel Caló y Osmar Maderna",
+    "lyricist": "Miguel Caló y Osmar Maderna"
+  },
+  "quedemonos-aqui": {
+    "author": "Héctor Stamponi",
+    "lyricist": "Homero Expósito"
+  },
+  "quiero-verte-una-vez-mas": {
+    "author": "Mario Canaro",
+    "lyricist": "José María Contursi"
+  },
+  "ramona": {
+    "author": "Mabel Wayne",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "rebeldia": {
+    "author": "Roberto Nievas Blanco y Oscar Rubens",
+    "lyricist": "Roberto Nievas Blanco y Oscar Rubens"
+  },
+  "recien": {
+    "author": "Osvaldo Pugliese",
+    "lyricist": "Homero Manzi"
+  },
+  "recuerdo": {
+    "author": "Osvaldo Pugliese",
+    "lyricist": "Eduardo Moreno"
+  },
+  "recuerdo-malevo": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "recuerdos-de-bohemia": {
+    "author": "Enrique Delfino",
+    "lyricist": "Manuel Romero"
+  },
+  "remembranza": {
+    "author": "Mario Melfi",
+    "lyricist": "Mario Battistella"
+  },
+  "remolino": {
+    "author": "Alfredo De Angelis",
+    "lyricist": "José Rótulo"
+  },
+  "romance-de-barrio": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Homero Manzi"
+  },
+  "romantica": {
+    "author": "Félix Lipesker",
+    "lyricist": "Homero Manzi"
+  },
+  "rondando-tu-esquina": {
+    "author": "Charlo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "ropa-blanca": {
+    "author": "Alfredo Malerba",
+    "lyricist": "Homero Manzi"
+  },
+  "rosa-de-otono": {
+    "author": "Guillermo Barbieri",
+    "lyricist": "José Rial"
+  },
+  "rubi": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "santa-milonguita": {
+    "author": "Enrique Delfino",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "se-dice-de-mi": {
+    "author": "Francisco Canaro",
+    "lyricist": "Ivo Pelay"
+  },
+  "se-muere-de-amor": {
+    "author": "Pedro Maffia",
+    "lyricist": "Cátulo Castillo"
+  },
+  "senda-florida": {
+    "author": "Rafael Rossi",
+    "lyricist": "Eugenio Cárdenas"
+  },
+  "sera-una-noche": {
+    "author": "José Tinelli",
+    "lyricist": "Manuel Ferradás Campos"
+  },
+  "shusheta": {
+    "author": "Juan Carlos Cobián",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "siga-el-baile": {
+    "author": "Edgardo Donato y Carlos Warren",
+    "lyricist": "Carlos Warren"
+  },
+  "siga-el-corso": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "silbando": {
+    "author": "Sebastián Piana y Cátulo Castillo",
+    "lyricist": "José González Castillo"
+  },
+  "silueta-portena": {
+    "author": "Nicolás Luis Cuccaro y Juan Ventura Cuccaro",
+    "lyricist": "Ernesto Nolli y Orlando D'Aniello"
+  },
+  "sin-esperanza": {
+    "author": "Joaquín Mora",
+    "lyricist": "José María Contursi"
+  },
+  "sin-lagrimas": {
+    "author": "Charlo",
+    "lyricist": "José María Contursi"
+  },
+  "sin-palabras": {
+    "author": "Mariano Mores",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "sin-piel": {
+    "author": "Eladia Blázquez",
+    "lyricist": "Eladia Blázquez"
+  },
+  "sobre-el-pucho": {
+    "author": "Sebastián Piana",
+    "lyricist": "José González Castillo"
+  },
+  "solamente-ella": {
+    "author": "Lucio Demare",
+    "lyricist": "Homero Manzi"
+  },
+  "soledad": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "sollozos": {
+    "author": "Osvaldo Fresedo",
+    "lyricist": "Emilio Fresedo"
+  },
+  "sonemos": {
+    "author": "Roberto Caló y Roberto Rufino",
+    "lyricist": "Reinaldo Yiso"
+  },
+  "sueno-de-barrilete": {
+    "author": "Eladia Blázquez",
+    "lyricist": "Eladia Blázquez"
+  },
+  "sueno-de-juventud": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "sueno-querido": {
+    "author": "Ángel Maffia",
+    "lyricist": "Mario Battistella"
+  },
+  "suerte-loca": {
+    "author": "Anselmo Aieta",
+    "lyricist": "Francisco García Jiménez"
+  },
+  "sur": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Homero Manzi"
+  },
+  "sus-ojos-se-cerraron": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "tabaco": {
+    "author": "Armando Pontier",
+    "lyricist": "José María Contursi"
+  },
+  "taconeando": {
+    "author": "Pedro Maffia",
+    "lyricist": "José Horacio Staffolani"
+  },
+  "tal-vez-sera-su-voz": {
+    "author": "Lucio Demare",
+    "lyricist": "Homero Manzi"
+  },
+  "tapera": {
+    "author": "Hugo Gutiérrez",
+    "lyricist": "Homero Manzi"
+  },
+  "tarareando": {
+    "author": "Juan José Guichandut y Oscar Rubens",
+    "lyricist": "Juan José Guichandut y Oscar Rubens"
+  },
+  "tarde": {
+    "author": "José Canet",
+    "lyricist": "José Canet"
+  },
+  "te-aconsejo-que-me-olvides": {
+    "author": "Pedro Maffia",
+    "lyricist": "Jorge Curi"
+  },
+  "te-llaman-malevo": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Homero Expósito"
+  },
+  "te-lloran-mis-ojos": {
+    "author": "Alfredo Malerba",
+    "lyricist": "Homero Manzi"
+  },
+  "temblando": {
+    "author": "Alberto Acuña",
+    "lyricist": "Charrúa"
+  },
+  "tinta-roja": {
+    "author": "Sebastián Piana",
+    "lyricist": "Cátulo Castillo"
+  },
+  "toda-mi-vida": {
+    "author": "Aníbal Troilo",
+    "lyricist": "José María Contursi"
+  },
+  "todo-es-amor": {
+    "author": "Leo Lipesker",
+    "lyricist": "Alejandro Romay"
+  },
+  "tomo-y-obligo": {
+    "author": "Carlos Gardel",
+    "lyricist": "Manuel Romero"
+  },
+  "tormenta": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "tormento": {
+    "author": "Charlo",
+    "lyricist": "Luis César Amadori"
+  },
+  "torrente": {
+    "author": "Hugo Gutiérrez",
+    "lyricist": "Homero Manzi"
+  },
+  "trenzas": {
+    "author": "Armando Pontier",
+    "lyricist": "Homero Expósito"
+  },
+  "tres-amigos": {
+    "author": "Enrique Cadícamo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "tres-esquinas": {
+    "author": "Ángel D'Agostino y Alfredo Attadía",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "tristeza-marina": {
+    "author": "José Dames y Roberto Flores",
+    "lyricist": "Horacio Sanguinetti"
+  },
+  "tristezas-de-la-calle-corrientes": {
+    "author": "Domingo Federico",
+    "lyricist": "Homero Expósito"
+  },
+  "tu": {
+    "author": "José Dames",
+    "lyricist": "José María Contursi"
+  },
+  "tu-corazon": {
+    "author": "Donato Racciatti",
+    "lyricist": "Enrique Soriano"
+  },
+  "tu-el-cielo-y-tu": {
+    "author": "Mario Canaro",
+    "lyricist": "Héctor Marcó"
+  },
+  "tu-palida-voz": {
+    "author": "Charlo",
+    "lyricist": "Homero Manzi"
+  },
+  "un-placer": {
+    "author": "Vicente Romeo",
+    "lyricist": "Juan Andrés Caruso"
+  },
+  "una-cancion": {
+    "author": "Aníbal Troilo, Juan Velich, Audón López y Francisco De Rose",
+    "lyricist": "Cátulo Castillo"
+  },
+  "una-emocion": {
+    "author": "Raúl Kaplún",
+    "lyricist": "José María Suñé"
+  },
+  "una-vez": {
+    "author": "Osvaldo Pugliese",
+    "lyricist": "Cátulo Castillo"
+  },
+  "uno": {
+    "author": "Mariano Mores",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "valsecito-amigo": {
+    "author": "Aníbal Troilo",
+    "lyricist": "José María Contursi"
+  },
+  "vendras-alguna-vez": {
+    "author": "Alfredo Malerba",
+    "lyricist": "Luis César Amadori"
+  },
+  "ventanita-de-arrabal": {
+    "author": "Antonio Scatasso",
+    "lyricist": "Pascual Contursi"
+  },
+  "ventarron": {
+    "author": "Pedro Maffia",
+    "lyricist": "José Horacio Staffolani"
+  },
+  "verdemar": {
+    "author": "Carlos Di Sarli",
+    "lyricist": "José María Contursi"
+  },
+  "vida-mia": {
+    "author": "Osvaldo Fresedo",
+    "lyricist": "Emilio Fresedo"
+  },
+  "vieja-amiga": {
+    "author": "Pedro Laurenz",
+    "lyricist": "José María Contursi"
+  },
+  "vieja-recova": {
+    "author": "Rodolfo Sciammarella",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "viejas-alegrias": {
+    "author": "Charlo",
+    "lyricist": "Enrique Cadícamo"
+  },
+  "viejo-ciego": {
+    "author": "Sebastián Piana y Cátulo Castillo",
+    "lyricist": "Homero Manzi"
+  },
+  "viejo-rincon": {
+    "author": "Raúl de los Hoyos",
+    "lyricist": "Roberto Cayol"
+  },
+  "viejo-smoking": {
+    "author": "Guillermo Barbieri",
+    "lyricist": "Celedonio Flores"
+  },
+  "volver": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "volvio-la-princesita": {
+    "author": "Antonio Sureda",
+    "lyricist": "Gerónimo Sureda"
+  },
+  "volvio-una-noche": {
+    "author": "Carlos Gardel",
+    "lyricist": "Alfredo Le Pera"
+  },
+  "vuelve-la-serenata": {
+    "author": "Aníbal Troilo",
+    "lyricist": "Cátulo Castillo"
+  },
+  "vuelvo-al-sur": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Pino Solanas"
+  },
+  "whisky": {
+    "author": "Héctor Marcó",
+    "lyricist": "Héctor Marcó"
+  },
+  "y-dicen-que-no-te-quiero": {
+    "author": "José Canet",
+    "lyricist": "José Canet"
+  },
+  "y-todavia-te-quiero": {
+    "author": "Luciano Leocata",
+    "lyricist": "Abel Aznar"
+  },
+  "yira-yira": {
+    "author": "Enrique Santos Discépolo",
+    "lyricist": "Enrique Santos Discépolo"
+  },
+  "yo-no-se-llorar": {
+    "author": "Joaquín Do Reyes",
+    "lyricist": "Celedonio Flores"
+  },
+  "yo-no-se-que-me-han-hecho-tus-ojos": {
+    "author": "Francisco Canaro",
+    "lyricist": "Francisco Canaro"
+  },
+  "yo-soy-aquel-muchacho": {
+    "author": "Vicente Russo y Joaquín Mora",
+    "lyricist": "Máximo Orsi"
+  },
+  "yo-soy-el-tango": {
+    "author": "Domingo Federico",
+    "lyricist": "Homero Expósito"
+  },
+  "yo-soy-maria": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Horacio Ferrer"
+  },
+  "yo-te-bendigo": {
+    "author": "Juan de Dios Filiberto",
+    "lyricist": "Juan Andrés Bruno"
+  },
+  "yuyo-verde": {
+    "author": "Domingo Federico",
+    "lyricist": "Homero Expósito"
+  },
+  "zorro-gris": {
+    "author": "Rafael Tuegols",
+    "lyricist": "Francisco García Jiménez"
+  }
+}

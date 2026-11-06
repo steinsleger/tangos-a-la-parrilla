@@ -1,4 +1,5 @@
 import { slugFromPath } from './route.ts'
+import { SITE_NAME } from './seo.ts'
 import { SiteFooter } from './SiteFooter.tsx'
 import { SongList } from './SongList.tsx'
 import { SongPage } from './SongPage.tsx'
@@ -14,7 +15,7 @@ function Page({ path }: { path: string }) {
     <main className="page">
       <h1 className="site-title">Página no encontrada</h1>
       <p>
-        <a href="/">Volver al índice</a>
+        <a href="/">Ir a {SITE_NAME}: índice alfabético</a>
       </p>
     </main>
   )
