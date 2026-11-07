@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import { slugFromPath } from './route.ts'
 import { SITE_NAME } from './seo.ts'
 import { SiteFooter } from './SiteFooter.tsx'
@@ -26,6 +27,7 @@ export function App({ path }: { path: string }) {
     <>
       <Page path={path} />
       <SiteFooter />
+      <Analytics />
     </>
   )
 }
