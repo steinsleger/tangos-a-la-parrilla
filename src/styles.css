@@ -148,17 +148,6 @@ a {
   gap: 8px;
 }
 
-.print-button {
-  min-height: 44px;
-  padding: 8px 14px;
-  border: 1px solid var(--muted);
-  border-radius: 6px;
-  background: #fff;
-  color: inherit;
-  font: inherit;
-  cursor: pointer;
-}
-
 .sheet-frame {
   position: relative;
   min-height: 100vh;
@@ -179,11 +168,11 @@ a {
   background: #fff;
 }
 
-.key-select {
+.dropdown {
   position: relative;
 }
 
-.key-button {
+.dropdown-button {
   min-height: 44px;
   padding: 8px 36px 8px 14px;
   border: 1px solid var(--muted);
@@ -195,7 +184,7 @@ a {
   position: relative;
 }
 
-.key-button::after {
+.dropdown-button::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -207,12 +196,10 @@ a {
   transform: translateY(-70%) rotate(45deg);
 }
 
-.key-list {
+.dropdown-list {
   position: absolute;
   z-index: 2;
   top: calc(100% + 4px);
-  right: 0;
-  width: 200px;
   max-height: 70vh;
   margin: 0;
   padding: 4px;
@@ -224,11 +211,22 @@ a {
   list-style: none;
 }
 
-.key-list:focus {
+.dropdown-list:focus {
   outline: none;
 }
 
-.key-option {
+.key-list {
+  right: 0;
+  width: 200px;
+}
+
+/* On narrow screens the export button sits at the left edge, so its list opens to the right. */
+.export-list {
+  left: 0;
+  min-width: 100%;
+}
+
+.dropdown-option {
   display: flex;
   gap: 8px;
   align-items: center;
@@ -238,22 +236,22 @@ a {
   cursor: pointer;
 }
 
-.key-option + .key-option {
+.dropdown-option + .dropdown-option {
   margin-top: 2px;
 }
 
-.key-option[data-original='true'] {
+.dropdown-option[data-original='true'] {
   background: var(--original);
   color: var(--on-original);
 }
 
-.key-option[data-selected='true'] {
+.dropdown-option[data-selected='true'] {
   background: var(--accent);
   color: var(--on-accent);
   font-weight: 600;
 }
 
-.key-option[data-active='true'] {
+.dropdown-option[data-active='true'] {
   outline: 2px solid currentColor;
   outline-offset: -2px;
 }

@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here. The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- XML export of every song in the selected key, for notation programs such as MuseScore or Sibelius.
+
+### Changed
+
+- The "Exportar PDF" button is now an "Exportar" menu with PDF and XML.
+
 ## [1.0.0] - 2026-11-06
 
 First public release, by Adrián Steinsleger, developed with Claude Opus 5.5. The initial set of scores comes from the project Cancionero del Tango by Hugo Satorre.

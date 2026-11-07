@@ -25,7 +25,8 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - `src/seo.ts`: titles, descriptions, structured data and sitemap. `src/Head.tsx`: head tags. `src/entry-server.tsx`: the list of pages.
 - `src/todotango.json`: links to Todo Tango. A song is only linked if the work's page there names one of its credited authors, because many titles are shared by different works.
 - `src/keys.ts`: key names and semitone maths. `src/route.ts`: hash URLs. `src/rememberedKeys.ts`: localStorage.
-- `src/SheetMusic.tsx`: OSMD wrapper. `src/KeySelect.tsx`: ARIA listbox. `src/SiteFooter.tsx`: feedback links and credits.
+- `src/SheetMusic.tsx`: OSMD wrapper. `src/KeySelect.tsx`: ARIA listbox. `src/ExportMenu.tsx`: ARIA menu for PDF and XML. `src/useDropdown.ts`: opening, closing and keyboard logic shared by both. `src/SiteFooter.tsx`: feedback links and credits.
+- `src/musicXml.ts`: score URLs and the XML export, transposed in the browser to the selected key.
 
 ### Rules
 
@@ -39,6 +40,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - A URL with `?tono=` is canonicalized to the song's clean URL. Do not create pages per key.
 - Every page needs its own title and meta description. All visible text is in Spanish; English only appears in the structured data. Descriptions stay in metadata: never show them on the page, and never hide text from users to show it to search engines.
 - PDF export is `window.print()`. `SheetMusic` paginates on `beforeprint` so no staff is split, and restores on `afterprint`. The PDF only shows the title, the credits and the score: no site header and no key label.
+- Every export keeps the selected key. XML in the original key is the file as it is; in any other key it is rewritten with the same `IntervalTransposeCalculator`, so its spelling matches the page.
 - The interface is in formal Spanish: address the user as `usted`, never as `vos` or `tú`.
 - In documents, do not break lines in the middle of a sentence.
 
@@ -83,7 +85,8 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 - `src/seo.ts`: títulos, descripciones, datos estructurados y sitemap. `src/Head.tsx`: etiquetas del encabezado HTML. `src/entry-server.tsx`: la lista de páginas.
 - `src/todotango.json`: enlaces a Todo Tango. Un tema solo se enlaza si la página de la obra nombra a alguno de sus autores, porque muchos títulos son compartidos por obras distintas.
 - `src/keys.ts`: nombres de tonos y cálculo de semitonos. `src/route.ts`: URLs con hash. `src/rememberedKeys.ts`: localStorage.
-- `src/SheetMusic.tsx`: envoltorio de OSMD. `src/KeySelect.tsx`: listbox ARIA. `src/SiteFooter.tsx`: enlaces de comentarios y créditos.
+- `src/SheetMusic.tsx`: envoltorio de OSMD. `src/KeySelect.tsx`: listbox ARIA. `src/ExportMenu.tsx`: menú ARIA para PDF y XML. `src/useDropdown.ts`: apertura, cierre y teclado compartidos por ambos. `src/SiteFooter.tsx`: enlaces de comentarios y créditos.
+- `src/musicXml.ts`: URLs de las partituras y exportación a XML, transpuesta en el navegador al tono elegido.
 
 ### Reglas
 
@@ -97,6 +100,7 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 - Una URL con `?tono=` tiene como canónica la URL limpia del tema. No cree páginas por tono.
 - Cada página necesita título y `meta description` propios. Todo el texto visible está en castellano; el inglés solo aparece en los datos estructurados. Las descripciones van solo en los metadatos: no se muestran en la página, y nunca se oculta texto a los usuarios para mostrárselo a los buscadores.
 - La exportación a PDF es `window.print()`. `SheetMusic` pagina en `beforeprint` para no cortar pentagramas y restaura en `afterprint`. El PDF solo muestra el título, los créditos y la partitura: sin encabezado del sitio ni indicación de tono.
+- Toda exportación respeta el tono elegido. El XML en el tono original es el archivo tal cual; en cualquier otro tono se reescribe con el mismo `IntervalTransposeCalculator`, así su escritura coincide con la de la página.
 - La interfaz está en castellano formal: se trata al usuario de `usted`, nunca de `vos` ni de `tú`.
 - En los documentos, no corte las líneas en medio de una oración.
 

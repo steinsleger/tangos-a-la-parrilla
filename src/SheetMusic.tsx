@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { OpenSheetMusicDisplay } from 'opensheetmusicdisplay'
+import { scoreUrl } from './musicXml.ts'
 
 const OSMD_OPTIONS = {
   autoResize: false,
@@ -34,7 +35,7 @@ export function SheetMusic({ slug, semitones }: SheetMusicProps) {
 
       const sheet = new OpenSheetMusicDisplay(containerRef.current!, OSMD_OPTIONS)
       sheet.TransposeCalculator = new IntervalTransposeCalculator()
-      await sheet.load(`/songs/${slug}.xml`)
+      await sheet.load(scoreUrl(slug))
       if (isCurrent) setOsmd(sheet)
     }
 

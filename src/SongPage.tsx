@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { creditParts } from './credits.ts'
+import { ExportMenu } from './ExportMenu.tsx'
 import { KeySelect } from './KeySelect.tsx'
 import { chosenKey, keyOptions, originalKey } from './keys.ts'
 import { rememberedKey, rememberKey } from './rememberedKeys.ts'
@@ -80,9 +81,7 @@ export function SongPage({ song }: { song: Song }) {
           <SongCredits song={song} />
         </div>
         <div className="song-actions">
-          <button type="button" className="print-button" onClick={() => window.print()}>
-            Exportar PDF
-          </button>
+          <ExportMenu slug={song.slug} keyOption={selected} />
           <KeySelect options={options} selected={selected.name} onChange={selectKey} />
         </div>
       </header>
