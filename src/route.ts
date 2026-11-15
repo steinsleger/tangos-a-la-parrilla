@@ -1,5 +1,7 @@
 const KEY_PARAM = 'tono'
 
+export const CHANGELOG_PATH = '/novedades/'
+
 export const songPath = (slug: string) => `/partituras/${slug}/`
 
 export const songUrl = (slug: string, keyName?: string) =>

@@ -12,13 +12,14 @@ Cancionero de tangos, valses y milongas para músicos: busque un tema, lea la pa
 
 ### Funciones
 
-- Índice de 388 temas con búsqueda por título, autor o letrista, sin importar tildes ni puntuación.
+- Índice de 428 temas con búsqueda por título, autor o letrista, sin importar tildes ni puntuación.
 - Partituras con acordes, generadas a partir de MusicXML con [OpenSheetMusicDisplay](https://opensheetmusicdisplay.org).
 - Transposición a cualquiera de los 12 tonos. La lista marca el tono original y el elegido.
 - El tono queda en la URL, así que se puede compartir un enlace directo a `/partituras/volver/?tono=Gm`.
 - El sitio recuerda en su navegador el último tono que usted eligió para cada tema.
-- Exportación a PDF desde la página de cada tema, a través del diálogo de impresión del navegador.
+- Exportación a PDF, a través del diálogo de impresión del navegador, y a XML (MusicXML) para programas como MuseScore o Sibelius, ambas en el tono elegido.
 - Enlaces a [Todo Tango](https://www.todotango.com) para cada obra, compositor y letrista que figura allí.
+- Página de [novedades](https://tangosalaparrilla.com.ar/novedades/) con el historial de cambios y la fecha de la última actualización.
 
 ### Uso local
 
@@ -44,9 +45,9 @@ El resultado es un sitio estático con una página HTML por tema, publicado en [
 
 ### Partituras
 
-La carga inicial de partituras proviene del proyecto [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/), de Hugo Satorre. Los archivos originales están en [`scores/`](scores) y no se modifican. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) los convierte en lo que usa el sitio y aplica las correcciones. La ortografía se corrige en [`scripts/spelling.mjs`](scripts/spelling.mjs). Los créditos de cada tema están en [`scripts/credits.json`](scripts/credits.json) y siguen a [Todo Tango](https://www.todotango.com), que prevalece cuando difiere de los archivos originales.
+La carga inicial de partituras proviene del proyecto [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/), de Hugo Satorre. Los archivos originales están en [`scores/`](scores) y no se modifican. Pueden ser MusicXML en UTF-16, exportados con Dolet, o en UTF-8, exportados directamente desde Sibelius. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) los convierte en lo que usa el sitio y aplica las correcciones: los acordes escritos como texto, incluidos los glifos de la fuente Opus Chords, se convierten en acordes que se pueden transponer con [`scripts/chords.mjs`](scripts/chords.mjs). La ortografía se corrige en [`scripts/spelling.mjs`](scripts/spelling.mjs). Los créditos de cada tema están en [`scripts/credits.json`](scripts/credits.json) y siguen a [Todo Tango](https://www.todotango.com), que prevalece cuando difiere de los archivos originales.
 
-Para agregar un tema, expórtelo desde Sibelius como MusicXML, déjelo en `scores/`, agregue sus créditos a `scripts/credits.json` y ejecute `pnpm songs`.
+Para agregar un tema, expórtelo desde Sibelius como MusicXML, déjelo en `scores/` con la extensión `.xml`, agregue sus créditos a `scripts/credits.json` y ejecute `pnpm songs`. Al publicar, anote los temas y cambios en [`src/releases.ts`](src/releases.ts), que alimenta la página de novedades, y en [CHANGELOG.md](CHANGELOG.md).
 
 ### Comentarios
 
@@ -74,13 +75,14 @@ A songbook of tangos, valses and milongas for musicians: find a song, read the s
 
 ### Features
 
-- Index of 388 songs, searchable by title, author or lyricist, ignoring accents and punctuation.
+- Index of 428 songs, searchable by title, author or lyricist, ignoring accents and punctuation.
 - Lead sheets rendered from MusicXML with [OpenSheetMusicDisplay](https://opensheetmusicdisplay.org).
 - Transposition to any of the 12 keys. The list marks both the original key and the selected one.
 - The key is part of the URL, so you can share a direct link such as `/partituras/volver/?tono=Gm`.
 - Your browser remembers the last key you chose for each song.
-- PDF export from every song page, through the browser's print dialog.
+- Export to PDF, through the browser's print dialog, and to XML (MusicXML) for programs such as MuseScore or Sibelius, both in the selected key.
 - Links to [Todo Tango](https://www.todotango.com) for every work, composer and lyricist listed there.
+- A [release notes](https://tangosalaparrilla.com.ar/novedades/) page with the history of changes and the date of the last update.
 
 ### Running it locally
 
@@ -106,9 +108,9 @@ The output is a static site with one HTML page per song, deployed on [Vercel](ht
 
 ### Scores
 
-The initial set of scores comes from the project [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/) by Hugo Satorre. The source files live in [`scores/`](scores) and are never edited. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) turns them into what the site uses and applies the repairs. Spelling is corrected in [`scripts/spelling.mjs`](scripts/spelling.mjs). Each song's credits live in [`scripts/credits.json`](scripts/credits.json) and follow [Todo Tango](https://www.todotango.com), which prevails over the source files when they differ.
+The initial set of scores comes from the project [Cancionero del Tango](https://hugosatorre.com.ar/portfolio/cancionero/) by Hugo Satorre. The source files live in [`scores/`](scores) and are never edited. They are either UTF-16 MusicXML exported with Dolet or UTF-8 MusicXML exported directly from Sibelius. [`scripts/build-songs.mjs`](scripts/build-songs.mjs) turns them into what the site uses and applies the repairs: chord symbols typed as text, including the glyphs of the Opus Chords font, become chords that transpose through [`scripts/chords.mjs`](scripts/chords.mjs). Spelling is corrected in [`scripts/spelling.mjs`](scripts/spelling.mjs). Each song's credits live in [`scripts/credits.json`](scripts/credits.json) and follow [Todo Tango](https://www.todotango.com), which prevails over the source files when they differ.
 
-To add a song, export it from Sibelius as MusicXML, place it in `scores/`, add its credits to `scripts/credits.json` and run `pnpm songs`.
+To add a song, export it from Sibelius as MusicXML, place it in `scores/` with the `.xml` extension, add its credits to `scripts/credits.json` and run `pnpm songs`. When releasing, list the songs and changes in [`src/releases.ts`](src/releases.ts), which feeds the release notes page, and in [CHANGELOG.md](CHANGELOG.md).
 
 ### Feedback
 

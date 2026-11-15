@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { UpdatesLink } from './Changelog.tsx'
 import { SCORES_SOURCE, SITE_NAME } from './seo.ts'
 
 const REPO_URL = 'https://github.com/steinsleger/tangos-a-la-parrilla'
@@ -29,6 +30,9 @@ export function SiteFooter() {
             </li>
           ))}
         </ul>
+        <p className="footer-updates">
+          <UpdatesLink />
+        </p>
         <p>
           {SITE_NAME}, creado por Adrián Steinsleger ·{' '}
           <ExternalLink href="https://www.linkedin.com/in/adriansteinsleger/">LinkedIn</ExternalLink> ·{' '}

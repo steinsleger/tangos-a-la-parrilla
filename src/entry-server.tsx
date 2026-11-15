@@ -1,8 +1,8 @@
 import { renderToStaticMarkup, renderToString } from 'react-dom/server'
 import { App } from './App.tsx'
 import { Head } from './Head.tsx'
-import { songPath } from './route.ts'
-import { HOME_META, notFoundMeta, songMeta, type PageMeta } from './seo.ts'
+import { CHANGELOG_PATH, songPath } from './route.ts'
+import { CHANGELOG_META, HOME_META, notFoundMeta, songMeta, type PageMeta } from './seo.ts'
 import { songs } from './songs.ts'
 
 interface Page {
@@ -13,6 +13,7 @@ interface Page {
 
 export const pages: Page[] = [
   { path: '/', file: 'index.html', meta: HOME_META },
+  { path: CHANGELOG_PATH, file: `${CHANGELOG_PATH.slice(1)}index.html`, meta: CHANGELOG_META },
   ...songs.map((song) => ({
     path: songPath(song.slug),
     file: `${songPath(song.slug).slice(1)}index.html`,

@@ -1,5 +1,6 @@
 import { Analytics } from '@vercel/analytics/react'
-import { slugFromPath } from './route.ts'
+import { ChangelogPage } from './Changelog.tsx'
+import { CHANGELOG_PATH, slugFromPath } from './route.ts'
 import { SITE_NAME } from './seo.ts'
 import { SiteFooter } from './SiteFooter.tsx'
 import { SongList } from './SongList.tsx'
@@ -8,6 +9,7 @@ import { songs } from './songs.ts'
 
 function Page({ path }: { path: string }) {
   if (path === '/') return <SongList />
+  if (path === CHANGELOG_PATH) return <ChangelogPage />
 
   const song = songs.find((candidate) => candidate.slug === slugFromPath(path))
   if (song) return <SongPage song={song} />

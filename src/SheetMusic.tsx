@@ -2,11 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import type { OpenSheetMusicDisplay } from 'opensheetmusicdisplay'
 import { scoreUrl } from './musicXml.ts'
 
+// The page header shows title and credits. Scores exported straight from Sibelius also carry their lyrics
+// and instrument names, which OSMD would otherwise draw over the music.
 const OSMD_OPTIONS = {
   autoResize: false,
-  drawTitle: false,
-  drawComposer: false,
-  drawLyricist: false,
+  drawCredits: false,
+  drawPartNames: false,
+  drawPartAbbreviations: false,
 }
 
 const FULL_SIZE_WIDTH = 1000

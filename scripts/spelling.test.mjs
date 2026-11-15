@@ -14,8 +14,14 @@ test('prefers the longest match', () => {
   assert.equal(fixSpelling(inTag('C.Cobian')), inTag('C. Cobián'))
 })
 
+test('fixes lyrics without touching voseo', () => {
+  assert.equal(fixSpelling(inTag('Mi ciudad esta por todos lados')), inTag('Mi ciudad está por todos lados'))
+  assert.equal(fixSpelling(inTag('De que planeta sos')), inTag('De qué planeta sos'))
+  assert.equal(fixSpelling(inTag('Subíte con tus clavas')), inTag('Subite con tus clavas'))
+})
+
 test('keeps words that are only wrong in other contexts', () => {
-  for (const text of ['Tomo y obligo', 'Este tango no se pudo revisar', 'En esta noche de luna', 'Marianito']) {
+  for (const text of ['Tomo y obligo', 'Este tango no se pudo revisar', 'En esta noche de luna', 'Marianito', 'Me paro en cada estatua']) {
     assert.equal(fixSpelling(inTag(text)), inTag(text))
   }
 })

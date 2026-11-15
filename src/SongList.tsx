@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { UpdatesLink } from './Changelog.tsx'
 import { songPath } from './route.ts'
 import { matches } from './search.ts'
 import { HOME_SUMMARY, SITE_NAME } from './seo.ts'
@@ -12,6 +13,7 @@ export function SongList() {
     <main className="page">
       <h1 className="site-title">{SITE_NAME}</h1>
       <p className="site-intro">{HOME_SUMMARY.es}</p>
+      <UpdatesLink />
       <h2 className="index-title">Índice alfabético</h2>
       <div className="search">
         <input

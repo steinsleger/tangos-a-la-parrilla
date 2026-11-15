@@ -31,6 +31,10 @@
     "author": "Horacio Pettorossi",
     "lyricist": "Juan Carlos Marambio Catán"
   },
+  "acrobata-de-luz": {
+    "author": "Nehuén Martino",
+    "lyricist": "Daniel Olivera"
+  },
   "adios-corazon": {
     "author": "Lalo Etchegoncelay",
     "lyricist": "Héctor Sapelli"
@@ -43,13 +47,29 @@
     "author": "Francisco Canaro y Mariano Mores",
     "lyricist": "Ivo Pelay"
   },
+  "adonde-va": {
+    "author": "Nehuén Martino",
+    "lyricist": "Daniel Olivera"
+  },
+  "afiches": {
+    "author": "Atilio Stampone",
+    "lyricist": "Homero Expósito"
+  },
   "ahora-no-me-conoces": {
     "author": "Armando Baliotti",
     "lyricist": "Carlos Giampé"
   },
+  "aire-sin-final": {
+    "author": "Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
+  },
   "al-compas-del-corazon": {
     "author": "Domingo Federico",
     "lyricist": "Homero Expósito"
+  },
+  "al-lado-de-tu-sueno": {
+    "author": "Mariano Heler",
+    "lyricist": "S. Lapine y Alfredo Rubín"
   },
   "al-mundo-le-falta-un-tornillo": {
     "author": "José María Aguilar",
@@ -103,9 +123,17 @@
     "author": "Rosita Quiroga",
     "lyricist": "Enrique Cadícamo"
   },
+  "araca-el-equivoco": {
+    "author": "Sebastián Luna",
+    "lyricist": ""
+  },
   "arrabal-amargo": {
     "author": "Carlos Gardel",
     "lyricist": "Alfredo Le Pera"
+  },
+  "asfalto-y-tripas-corazon": {
+    "author": "Juan Lorenzo",
+    "lyricist": "Juan Lorenzo"
   },
   "asi-se-baila-el-tango": {
     "author": "Elías Randal",
@@ -143,6 +171,10 @@
     "author": "Astor Piazzolla",
     "lyricist": "Horacio Ferrer"
   },
+  "balvanera": {
+    "author": "Ángel Pulice",
+    "lyricist": "Ángel Pulice"
+  },
   "bandoneon-arrabalero": {
     "author": "Bachicha",
     "lyricist": "Pascual Contursi"
@@ -175,6 +207,10 @@
     "author": "Antonio Romano y Jorge Cerioti",
     "lyricist": "Luis Caruso"
   },
+  "borron-y-cuenta-nueva": {
+    "author": "Roberto Maño",
+    "lyricist": ""
+  },
   "buscandote": {
     "author": "Lalo Scalise",
     "lyricist": "Lalo Scalise"
@@ -190,6 +226,10 @@
   "cafetin-de-buenos-aires": {
     "author": "Mariano Mores",
     "lyricist": "Enrique Santos Discépolo"
+  },
+  "calle": {
+    "author": "Alfredo Rubín y Fabrizio Pieroni",
+    "lyricist": "Alfredo Rubín"
   },
   "callejon": {
     "author": "Roberto Grela",
@@ -259,6 +299,10 @@
     "author": "Adolfo Avilés",
     "lyricist": "Enrique Maroni"
   },
+  "ciudad-de-nadie": {
+    "author": "José Ogivieki",
+    "lyricist": "Alejandro Szwarcman"
+  },
   "claudinette": {
     "author": "Enrique Delfino",
     "lyricist": "Julián Centeya"
@@ -311,6 +355,10 @@
     "author": "Mariano Mores",
     "lyricist": "José María Contursi"
   },
+  "cuando-los-demonios-tratan": {
+    "author": "Germán Pérez Toledo",
+    "lyricist": ""
+  },
   "cuando-tallan-los-recuerdos": {
     "author": "Rafael Rossi",
     "lyricist": "Enrique Cadícamo"
@@ -335,9 +383,17 @@
     "author": "Lucio Demare",
     "lyricist": "Agustín Irusta y Roberto Fugazot"
   },
+  "daria": {
+    "author": "Mariano Heler",
+    "lyricist": "Diego Baiardi"
+  },
   "de-barro": {
     "author": "Sebastián Piana",
     "lyricist": "Homero Manzi"
+  },
+  "de-ceniza-y-de-carbon": {
+    "author": "Juan Lorenzo",
+    "lyricist": "Juan Lorenzo"
   },
   "de-mi-barrio": {
     "author": "Roberto Goyheneche",
@@ -374,6 +430,10 @@
   "divina": {
     "author": "Joaquín Mora",
     "lyricist": "Juan De La Calle"
+  },
+  "don-juan-alarcon": {
+    "author": "Flavio Romanelli",
+    "lyricist": "Flavio Romanelli"
   },
   "duelo-criollo": {
     "author": "Juan Rezzano",
@@ -455,6 +515,10 @@
     "author": "Guillermo Barbieri",
     "lyricist": "Enrique Cadícamo"
   },
+  "el-remate": {
+    "author": "Benjamin Sebban",
+    "lyricist": "Alberto Beto Flores"
+  },
   "el-sueno-del-pibe": {
     "author": "Juan Puey",
     "lyricist": "Reinaldo Yiso"
@@ -507,6 +571,10 @@
     "author": "Luis Brighenti",
     "lyricist": "Enrique Cadícamo"
   },
+  "esa-palabra": {
+    "author": "M. Mercadante",
+    "lyricist": "P. Marchetti"
+  },
   "esquinas-portenas": {
     "author": "Sebastián Piana",
     "lyricist": "Homero Manzi"
@@ -550,6 +618,10 @@
   "fueye": {
     "author": "Charlo",
     "lyricist": "Homero Manzi"
+  },
+  "fugaz": {
+    "author": "Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
   },
   "fuimos": {
     "author": "José Dames",
@@ -599,6 +671,10 @@
     "author": "Félix Lipesker",
     "lyricist": "Homero Manzi"
   },
+  "gricel": {
+    "author": "Mariano Mores",
+    "lyricist": "José María Contursi"
+  },
   "griseta": {
     "author": "Enrique Delfino",
     "lyricist": "José González Castillo"
@@ -626,6 +702,10 @@
   "intimas": {
     "author": "Alfonso Lacueva",
     "lyricist": "Ricardo Brignolo"
+  },
+  "inundacion": {
+    "author": "Julián Peralta",
+    "lyricist": "Juan Seren"
   },
   "invierno": {
     "author": "Horacio Pettorossi",
@@ -763,6 +843,10 @@
     "author": "Astor Piazzolla",
     "lyricist": "Mario Trejo"
   },
+  "lysou": {
+    "author": "Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
+  },
   "madame-ivonne": {
     "author": "Eduardo Pereyra",
     "lyricist": "Enrique Cadícamo"
@@ -830,6 +914,10 @@
   "maria": {
     "author": "Aníbal Troilo",
     "lyricist": "Cátulo Castillo"
+  },
+  "marilina": {
+    "author": "Fernando Lernoud",
+    "lyricist": "Hernán Gallegos"
   },
   "marion": {
     "author": "Luis Rubistein",
@@ -907,6 +995,14 @@
     "author": "Sebastián Piana",
     "lyricist": "Homero Manzi"
   },
+  "milonga-del-cogotudo": {
+    "author": "Ángel Pulice",
+    "lyricist": "Ángel Pulice"
+  },
+  "milonga-en-luto": {
+    "author": "Juan Lorenzo",
+    "lyricist": ""
+  },
   "milonga-sentimental": {
     "author": "Sebastián Piana",
     "lyricist": "Homero Manzi"
@@ -975,6 +1071,10 @@
     "author": "Raúl Fernández Siro",
     "lyricist": "Homero Manzi"
   },
+  "no-es-tango": {
+    "author": "Esteban Ibáñez",
+    "lyricist": "Esteban Ibáñez y Fernando Lernoud"
+  },
   "no-hay-tierra-como-la-mia": {
     "author": "Charlo",
     "lyricist": "Enrique Cadícamo"
@@ -982,6 +1082,10 @@
   "no-me-pregunten-por-que": {
     "author": "Carlos Di Sarli",
     "lyricist": "Reynaldo Pignataro"
+  },
+  "no-tan-angelito": {
+    "author": "Carlos Quilici",
+    "lyricist": "Carlos Quilici"
   },
   "nobleza-de-arrabal": {
     "author": "Francisco Canaro",
@@ -1091,6 +1195,10 @@
     "author": "Astor Piazzolla",
     "lyricist": "Homero Expósito"
   },
+  "plegaria": {
+    "author": "Diego Schissi",
+    "lyricist": ""
+  },
   "pobre-flor-primera-ilusion": {
     "author": "Luis Mottolese",
     "lyricist": "Víctor Spindola"
@@ -1126,6 +1234,14 @@
   "puente-alsina": {
     "author": "Benjamín Tagle Lara",
     "lyricist": "Benjamín Tagle Lara"
+  },
+  "puente-pueyrredon": {
+    "author": "Pablo Sensottera",
+    "lyricist": ""
+  },
+  "purpuras-de-piedra-y-puterio": {
+    "author": "Fabrizio Pieroni y Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
   },
   "que-buena-fe": {
     "author": "Eladia Blázquez",
@@ -1179,6 +1295,14 @@
     "author": "Enrique Delfino",
     "lyricist": "Manuel Romero"
   },
+  "regin": {
+    "author": "Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
+  },
+  "reina-noche": {
+    "author": "Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
+  },
   "remembranza": {
     "author": "Mario Melfi",
     "lyricist": "Mario Battistella"
@@ -1190,6 +1314,10 @@
   "romance-de-barrio": {
     "author": "Aníbal Troilo",
     "lyricist": "Homero Manzi"
+  },
+  "romance-de-cotillon": {
+    "author": "Ángel Pulice",
+    "lyricist": "Ángel Pulice"
   },
   "romantica": {
     "author": "Félix Lipesker",
@@ -1235,6 +1363,10 @@
     "author": "Juan Carlos Cobián",
     "lyricist": "Enrique Cadícamo"
   },
+  "siempre-se-vuelve-a-buenos-aires": {
+    "author": "Astor Piazzolla",
+    "lyricist": "Eladia Blázquez"
+  },
   "siga-el-baile": {
     "author": "Edgardo Donato y Carlos Warren",
     "lyricist": "Carlos Warren"
@@ -1263,9 +1395,17 @@
     "author": "Mariano Mores",
     "lyricist": "Enrique Santos Discépolo"
   },
+  "sin-petalos": {
+    "author": "Ramiro Gallo",
+    "lyricist": ""
+  },
   "sin-piel": {
     "author": "Eladia Blázquez",
     "lyricist": "Eladia Blázquez"
+  },
+  "sinsur": {
+    "author": "Julián Peralta",
+    "lyricist": "Victoria Di Raimondo"
   },
   "sobre-el-pucho": {
     "author": "Sebastián Piana",
@@ -1411,9 +1551,25 @@
     "author": "Mario Canaro",
     "lyricist": "Héctor Marcó"
   },
+  "tu-mejor-alumno": {
+    "author": "M. Mercadante",
+    "lyricist": "P. Marchetti"
+  },
   "tu-palida-voz": {
     "author": "Charlo",
     "lyricist": "Homero Manzi"
+  },
+  "un-lado-y-otro": {
+    "author": "Sebastián Luna",
+    "lyricist": ""
+  },
+  "un-nuevo-dia": {
+    "author": "Camila Mandirola Lucci",
+    "lyricist": ""
+  },
+  "un-patio": {
+    "author": "Ramiro Gallo",
+    "lyricist": ""
   },
   "un-placer": {
     "author": "Vicente Romeo",
@@ -1482,6 +1638,10 @@
   "viejo-smoking": {
     "author": "Guillermo Barbieri",
     "lyricist": "Celedonio Flores"
+  },
+  "viento-solo": {
+    "author": "Alfredo Rubín",
+    "lyricist": "Alfredo Rubín"
   },
   "volver": {
     "author": "Carlos Gardel",

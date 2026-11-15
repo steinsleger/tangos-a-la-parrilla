@@ -1,6 +1,7 @@
 import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { sitemap } from '../src/seo.ts'
+import { chordHarmony } from './chords.mjs'
 import credits from './credits.json' with { type: 'json' }
 import { fixSpelling } from './spelling.mjs'
 
@@ -14,19 +15,47 @@ const WRONG_SOURCE_TITLES = {
   'El dia que me quieras cancionero.xml': 'El día que me quieras',
 }
 
-const rootStep = (letter) => `<root-step>${letter}</root-step>`
-const harmony = (root, kind, bass = '') => `<harmony><root>${root}</root><kind>${kind}</kind>${bass}</harmony>`
+// The quality glyph is unreadable or ambiguous in these, so they keep only what the score confirms.
+const UNCERTAIN_CHORDS = {
+  Gw: 'G',
+  'E%': 'E',
+  'Em(,7)': 'Em',
+  'Gm#º': 'G#º', // The melody spells G#, B and D before A7.
+  'A7(„ˆˆ9)': 'A79', // "„ˆˆ" is spacing: the melody has a natural B.
+  'E‹9(„ˆˆ11)': "Em9'11", // The melody has a natural A.
+}
 
-// Sibelius exported these as plain text, which OSMD renders verbatim and can't transpose.
+// Text over the score that chordHarmony can't read, or that must go.
 const TEXT_DIRECTION_FIXES = {
   '\\$Title\\': '', // Unexpanded Sibelius wildcard. The page header already shows the title.
-  A7: harmony(rootStep('A'), 'dominant'),
-  'Am/C': harmony(rootStep('A'), 'minor', '<bass><bass-step>C</bass-step></bass>'),
-  'C#0': harmony(`${rootStep('C')}<root-alter>1</root-alter>`, 'diminished'),
-  C07: harmony(rootStep('C'), 'diminished-seventh'),
-  Gw: harmony(rootStep('G'), 'major'), // The "w" quality glyph is unreadable, only the root is certain.
   '£': '', // Chord font glyph for "previous chord continues", which an empty bar already says.
+  µ: '', // Unreadable chord font glyph after D7 in ¿Adónde va?
+  'Música: F. Pieroni - A. RubinLetra: A. Rubin': '', // Credits typed over the score in Calle, as two texts.
+  ...Object.fromEntries(Object.entries(UNCERTAIN_CHORDS).map(([text, chord]) => [text, chordHarmony(chord)])),
 }
+
+// Their key signature says major, but they start and end in the relative minor.
+const SOURCES_IN_RELATIVE_MINOR = new Set([
+  'Acróbata de luz cancionero.xml',
+  'Asfalto y tripas corazón cancionero.xml',
+  'Balvanera cancionero.xml',
+  'De ceniza y de carbón cancionero.xml',
+  'Don Juan Alarcón cancionero.xml',
+  'Lysou cancionero.xml',
+  'Milonga en luto cancionero.xml',
+  'No es tango cancionero.xml',
+  'Puente Pueyrredón cancionero.xml',
+  'Reina noche cancionero.xml',
+  'Sin pétalos cancionero.xml',
+  'Un nuevo día cancionero.xml',
+  'Un patio cancionero.xml',
+])
+
+// A direction, plus the next one when it only holds degrees, because Sibelius may split "A7" and "13b".
+const DIRECTION =
+  /<direction[ >].*?<\/direction>(?:\s*<direction[ >](?:(?!<\/direction>).)*<words[^>]*>(?:[#b]\d+|\d+[#b])<\/words>.*?<\/direction>)?/gs
+const WORDS = /<words([^>]*)>(.*?)<\/words>/gs
+const CHORD_FONT = /font-family=["'][^"']*Chords/
 
 const XML_ENTITIES = { amp: '&', apos: "'" }
 
@@ -46,16 +75,32 @@ const slugify = (title) =>
 
 const sortableTitle = ({ title }) => title.replace(/^[¡¿]/, '')
 
-const repairTextDirections = (xml) =>
-  xml.replace(/<direction[ >].*?<\/direction>/gs, (direction) => {
-    const text = direction.match(/<words[^>]*>\s*(.*?)\s*<\/words>/s)?.[1]
-    return TEXT_DIRECTION_FIXES[text] ?? direction
-  })
+// Boxed text is a section label, like A or Coda, never a chord.
+function repairDirection(direction, fileName) {
+  const words = [...direction.matchAll(WORDS)]
+  if (words.length === 0 || words.some(([, attributes]) => attributes.includes('enclosure'))) return direction
+
+  const text = words.map(([, , text]) => text).join('').trim()
+  const repaired = TEXT_DIRECTION_FIXES[text] ?? chordHarmony(text)
+  if (repaired === undefined && words.some(([, attributes]) => CHORD_FONT.test(attributes))) {
+    throw new Error(`Unreadable chord "${text}" in ${fileName}`)
+  }
+  return repaired ?? direction
+}
+
+const repairTextDirections = (xml, fileName) => xml.replace(DIRECTION, (direction) => repairDirection(direction, fileName))
 
 const isUtf16 = (bytes) => bytes[0] === 0xff && bytes[1] === 0xfe
 
+// Scores exported with Dolet are UTF-16, the ones exported directly from Sibelius are UTF-8.
+const decode = (bytes) => (isUtf16(bytes) ? new TextDecoder('utf-16le') : new TextDecoder()).decode(bytes)
+
+const fixMode = (xml, fileName) =>
+  SOURCES_IN_RELATIVE_MINOR.has(fileName) ? xml.replace('<mode>major</mode>', '<mode>minor</mode>') : xml
+
 function parseSong(xml, fileName) {
-  const title = WRONG_SOURCE_TITLES[fileName] ?? collapseWhitespace(readTag(xml, /<movement-title>(.*?)<\/movement-title>/s))
+  const sourceTitle = readTag(xml, /<movement-title>(.*?)<\/movement-title>/s) || readTag(xml, /<work-title>(.*?)<\/work-title>/s)
+  const title = WRONG_SOURCE_TITLES[fileName] ?? collapseWhitespace(sourceTitle)
   // Line 1 is the author and line 2 the lyricist. The file's own <creator type='lyricist'> holds junk.
   const [author = '', lyricist = ''] = readTag(xml, /<creator type='composer'>(.*?)<\/creator>/s)
     .split('\n')
@@ -74,15 +119,14 @@ const songs = []
 const slugs = new Set()
 
 for (const fileName of readdirSync(SOURCE_DIR).filter((name) => name.endsWith('.xml'))) {
-  const bytes = readFileSync(join(SOURCE_DIR, fileName))
-  if (!isUtf16(bytes)) {
+  const source = decode(readFileSync(join(SOURCE_DIR, fileName)))
+  if (!source.startsWith('<?xml')) {
     console.warn(`Skipped, not MusicXML: ${fileName}`)
     continue
   }
 
-  const xml = fixSpelling(
-    repairTextDirections(new TextDecoder('utf-16le').decode(bytes).replace("encoding='UTF-16'", "encoding='UTF-8'")),
-  )
+  const utf8 = source.replace("encoding='UTF-16'", "encoding='UTF-8'")
+  const xml = fixSpelling(repairTextDirections(fixMode(utf8, fileName), fileName))
   const song = parseSong(xml, fileName)
 
   if (slugs.has(song.slug)) throw new Error(`Duplicate slug "${song.slug}" from ${fileName}`)

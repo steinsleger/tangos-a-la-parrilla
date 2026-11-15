@@ -11,7 +11,7 @@ Para colaborar con código:
 1. Siga los pasos de [Uso local](README.md#uso-local).
 2. Haga cambios pequeños y enfocados. Si es algo grande, abra primero un issue para conversarlo.
 3. Ejecute `pnpm test` y `pnpm build` antes de abrir el pull request.
-4. Agregue los cambios visibles para los usuarios a [CHANGELOG.md](CHANGELOG.md).
+4. Agregue los cambios visibles para los usuarios a [CHANGELOG.md](CHANGELOG.md) y, en castellano, a [`src/releases.ts`](src/releases.ts), que alimenta la página de novedades.
 
 La rama `main` está protegida: todo cambio entra por pull request y necesita la aprobación de Adrián Steinsleger. Las convenciones del proyecto están en [AGENTS.md](AGENTS.md). Al contribuir, usted acepta que su aporte se publique bajo la misma [licencia](LICENSE) del proyecto.
 
@@ -24,6 +24,6 @@ To contribute code:
 1. Follow the steps in [Running it locally](README.md#running-it-locally).
 2. Keep changes small and focused. For anything large, open an issue first to discuss it.
 3. Run `pnpm test` and `pnpm build` before opening a pull request.
-4. Add user-facing changes to [CHANGELOG.md](CHANGELOG.md).
+4. Add user-facing changes to [CHANGELOG.md](CHANGELOG.md) and, in Spanish, to [`src/releases.ts`](src/releases.ts), which feeds the release notes page.
 
 The `main` branch is protected: every change goes through a pull request and needs Adrián Steinsleger's approval. The project's conventions are in [AGENTS.md](AGENTS.md). By contributing, you agree that your work is published under the project's [license](LICENSE).

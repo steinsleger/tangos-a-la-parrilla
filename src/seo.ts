@@ -1,5 +1,6 @@
 import { keyOptions, originalKey } from './keys.ts'
-import { songPath } from './route.ts'
+import { formatDate, lastUpdate } from './releases.ts'
+import { CHANGELOG_PATH, songPath } from './route.ts'
 import type { Song } from './songs.ts'
 
 export const SITE_NAME = 'Tangos a la parrilla'
@@ -13,6 +14,7 @@ export const SCORES_SOURCE = {
 
 const OG_IMAGE = `${SITE_URL}/og-image.png`
 const HOME_URL = `${SITE_URL}/`
+const CHANGELOG_URL = `${SITE_URL}${CHANGELOG_PATH}`
 
 const CREATOR = {
   '@type': 'Person',
@@ -44,6 +46,14 @@ const inBothLanguages = ({ es, en }: Summary) => [
   { '@language': 'es', '@value': es },
   { '@language': 'en', '@value': en },
 ]
+
+const breadcrumb = (name: string, url: string) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: SITE_NAME, item: HOME_URL },
+    { '@type': 'ListItem', position: 2, name, item: url },
+  ],
+})
 
 export const HOME_SUMMARY: Summary = {
   es: 'Tangos, valses y milongas para tocar en cualquier tonalidad o imprimir la partitura con acordes.',
@@ -107,16 +117,37 @@ export function songMeta(song: Song): PageMeta {
           ...(song.author && { composer: person(song.author) }),
           ...(song.lyricist && { lyricist: person(song.lyricist) }),
         },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: SITE_NAME, item: HOME_URL },
-            { '@type': 'ListItem', position: 2, name: song.title, item: url },
-          ],
-        },
+        breadcrumb(song.title, url),
       ],
     },
   }
+}
+
+export const CHANGELOG_SUMMARY: Summary = {
+  es: `Temas agregados, funciones nuevas y correcciones de ${SITE_NAME}. Última actualización: ${formatDate(lastUpdate)}.`,
+  en: `New songs, features and fixes in ${SITE_NAME}. Last updated: ${lastUpdate}.`,
+}
+
+export const CHANGELOG_META: PageMeta = {
+  title: `Novedades: temas agregados y cambios | ${SITE_NAME}`,
+  description: CHANGELOG_SUMMARY.es,
+  url: CHANGELOG_URL,
+  image: OG_IMAGE,
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        name: 'Novedades',
+        url: CHANGELOG_URL,
+        inLanguage: 'es',
+        dateModified: lastUpdate,
+        description: inBothLanguages(CHANGELOG_SUMMARY),
+        isPartOf: { '@type': 'WebSite', name: SITE_NAME, url: HOME_URL },
+      },
+      breadcrumb('Novedades', CHANGELOG_URL),
+    ],
+  },
 }
 
 export const notFoundMeta: PageMeta = {
@@ -127,9 +158,13 @@ export const notFoundMeta: PageMeta = {
 
 export const serializeJsonLd = (data: object) => JSON.stringify(data).replace(/</g, '\\u003c')
 
+const sitemapEntry = (url: string, lastmod?: string) =>
+  `<url><loc>${url}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`
+
+// The index and the release notes change with every release, so their date is known.
 export const sitemap = (songs: Song[]) =>
   `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[HOME_URL, ...songs.map(absoluteSongUrl)].map((url) => `<url><loc>${url}</loc></url>`).join('\n')}
+${[sitemapEntry(HOME_URL, lastUpdate), sitemapEntry(CHANGELOG_URL, lastUpdate), ...songs.map((song) => sitemapEntry(absoluteSongUrl(song)))].join('\n')}
 </urlset>
 `
