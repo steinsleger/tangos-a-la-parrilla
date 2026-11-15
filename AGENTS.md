@@ -24,7 +24,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - `scripts/credits.json`: author and lyricist of every song. The `people` keys in `src/todotango.json` are these displayed names, so a change here must be made there too.
 - `scripts/prerender.mjs`: writes every page into `dist/`.
 - `src/seo.ts`: titles, descriptions, structured data and sitemap. `src/Head.tsx`: head tags. `src/entry-server.tsx`: the list of pages.
-- `src/releases.ts`: release notes in Spanish and the date of the last update. `src/Changelog.tsx`: the `/novedades/` page and the button that links to it from the index and the footer.
+- `src/releases.ts`: release notes in Spanish and the date of the last update. They only list what is already on the site, never pending work. `src/Changelog.tsx`: the `/novedades/` page and the button that links to it from the index and the footer.
 - `src/todotango.json`: links to Todo Tango. A song is only linked if the work's page there names one of its credited authors, because many titles are shared by different works.
 - `src/keys.ts`: key names and semitone maths. `src/route.ts`: hash URLs. `src/rememberedKeys.ts`: localStorage.
 - `src/SheetMusic.tsx`: OSMD wrapper. `src/KeySelect.tsx`: ARIA listbox. `src/ExportMenu.tsx`: ARIA menu for PDF and XML. `src/useDropdown.ts`: opening, closing and keyboard logic shared by both. `src/SiteFooter.tsx`: feedback links and credits.
@@ -88,7 +88,7 @@ Use pnpm 12 con Corepack (`corepack enable`, o anteponga `corepack` a cada coman
 - `scripts/credits.json`: autor y letrista de cada tema. Las claves de `people` en `src/todotango.json` son estos nombres visibles, así que un cambio aquí debe hacerse también allí.
 - `scripts/prerender.mjs`: escribe cada página en `dist/`.
 - `src/seo.ts`: títulos, descripciones, datos estructurados y sitemap. `src/Head.tsx`: etiquetas del encabezado HTML. `src/entry-server.tsx`: la lista de páginas.
-- `src/releases.ts`: novedades en castellano y fecha de la última actualización. `src/Changelog.tsx`: la página `/novedades/` y el botón que lleva a ella desde el índice y el pie.
+- `src/releases.ts`: novedades en castellano y fecha de la última actualización. Solo incluyen lo que ya está en el sitio, nunca trabajo pendiente. `src/Changelog.tsx`: la página `/novedades/` y el botón que lleva a ella desde el índice y el pie.
 - `src/todotango.json`: enlaces a Todo Tango. Un tema solo se enlaza si la página de la obra nombra a alguno de sus autores, porque muchos títulos son compartidos por obras distintas.
 - `src/keys.ts`: nombres de tonos y cálculo de semitonos. `src/route.ts`: URLs con hash. `src/rememberedKeys.ts`: localStorage.
 - `src/SheetMusic.tsx`: envoltorio de OSMD. `src/KeySelect.tsx`: listbox ARIA. `src/ExportMenu.tsx`: menú ARIA para PDF y XML. `src/useDropdown.ts`: apertura, cierre y teclado compartidos por ambos. `src/SiteFooter.tsx`: enlaces de comentarios y créditos.

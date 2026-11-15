@@ -6,7 +6,6 @@ export interface Release {
   songs?: string[]
   changed?: string[]
   fixed?: string[]
-  pending?: string[]
 }
 
 export const releases: Release[] = [
@@ -61,7 +60,6 @@ export const releases: Release[] = [
       'viento-solo',
     ],
     changed: ['El botón «Exportar PDF» ahora es un menú «Exportar» con PDF y XML.'],
-    pending: ['«Milonguera de ley» se publicará cuando se corrija la armadura de su partitura.'],
   },
   {
     version: '1.0.0',

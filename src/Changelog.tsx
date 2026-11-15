@@ -7,7 +7,6 @@ const NOTE_GROUPS = [
   ['added', 'Nuevo'],
   ['changed', 'Cambios'],
   ['fixed', 'Correcciones'],
-  ['pending', 'Pendiente'],
 ] as const
 
 function songWithSlug(slug: string) {
