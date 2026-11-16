@@ -55,7 +55,7 @@ First public release, by Adrián Steinsleger, developed with Claude Opus 5.5. Th
 
 ### Known issues
 
-- `Afiches`, `Grisel` and `Siempre se vuelve a Buenos Aires` are missing because their files are binary Sibelius files.
+- `Afiches`, `Gricel` and `Siempre se vuelve a Buenos Aires` are missing because their files are binary Sibelius files.
 
 [Unreleased]: https://github.com/steinsleger/tangos-a-la-parrilla/compare/v1.1.0...HEAD
 [1.1.0]: https://github.com/steinsleger/tangos-a-la-parrilla/releases/tag/v1.1.0
