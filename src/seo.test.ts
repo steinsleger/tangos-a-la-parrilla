@@ -23,9 +23,26 @@ test('describes a song by its own data', () => {
   )
 })
 
+test('offers the lyrics when the song has them', () => {
+  const lyrics = [
+    ['Volver', 'con la frente marchita'],
+    ['Sentir', 'que es un soplo la vida'],
+  ]
+  const meta = songMeta(volver, lyrics)
+
+  assert.equal(meta.title, 'Volver (Dm): partitura, acordes y letra | Tangos a la parrilla')
+  assert.match(meta.description, /imprima la partitura con acordes y la letra\. De C\. Gardel/)
+  assert.match(songSummary(volver, true).en, /with chords and lyrics\. By C\. Gardel/)
+  assert.match(
+    JSON.stringify(meta.jsonLd),
+    /"lyrics":\{"@type":"CreativeWork","inLanguage":"es","text":"Volver\\ncon la frente marchita\\n\\nSentir\\nque es un soplo la vida"\}/,
+  )
+  assert.doesNotMatch(JSON.stringify(songMeta(volver).jsonLd), /lyrics"/)
+})
+
 test('summarizes a song in Spanish and English', () => {
   assert.equal(
-    songSummary(volver).en,
+    songSummary(volver, false).en,
     'Play "Volver" in any key or print the sheet music with chords. By C. Gardel, lyrics by A. Le Pera. Original key: Dm.',
   )
   assert.match(JSON.stringify(songMeta(volver).jsonLd), /"@language":"en"/)
@@ -34,16 +51,16 @@ test('summarizes a song in Spanish and English', () => {
 test('leaves out credits a song does not have', () => {
   const song = { ...volver, author: '', lyricist: '' }
 
-  assert.match(songSummary(song).es, /con acordes\. Tonalidad original/)
-  assert.match(songSummary(song).en, /with chords\. Original key/)
+  assert.match(songSummary(song, false).es, /con acordes\. Tonalidad original/)
+  assert.match(songSummary(song, false).en, /with chords\. Original key/)
   assert.doesNotMatch(JSON.stringify(songMeta(song).jsonLd), /composer|lyricist/)
 })
 
 test('credits a lyricist without an author', () => {
   const song = { ...volver, author: '' }
 
-  assert.match(songSummary(song).es, /Letra de A\. Le Pera\./)
-  assert.match(songSummary(song).en, /Lyrics by A\. Le Pera\./)
+  assert.match(songSummary(song, false).es, /Letra de A\. Le Pera\./)
+  assert.match(songSummary(song, false).en, /Lyrics by A\. Le Pera\./)
 })
 
 test('credits the source of the scores', () => {
@@ -51,7 +68,10 @@ test('credits the source of the scores', () => {
 })
 
 test('keeps the English description out of the visible text', () => {
-  assert.equal(HOME_META.description, 'Tangos, valses y milongas para tocar en cualquier tonalidad o imprimir la partitura con acordes.')
+  assert.equal(
+    HOME_META.description,
+    'Tangos, valses y milongas para tocar en cualquier tonalidad o imprimir la partitura con acordes y letra.',
+  )
   assert.match(JSON.stringify(HOME_META.jsonLd), /"@language":"en"/)
 })
 

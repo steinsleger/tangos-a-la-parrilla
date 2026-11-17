@@ -10,6 +10,15 @@ export interface Release {
 
 export const releases: Release[] = [
   {
+    version: '1.2.0',
+    date: '2026-11-17',
+    added: [
+      'La letra de los 428 temas, debajo de la partitura, en dos columnas en las pantallas anchas.',
+      'Un botón «Letra», junto a «Exportar», que lleva directamente a la letra.',
+    ],
+    changed: ['La exportación a PDF agrega la letra en una página aparte, después de la partitura.'],
+  },
+  {
     version: '1.1.0',
     date: '2026-11-15',
     added: [

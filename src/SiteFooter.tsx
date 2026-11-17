@@ -47,10 +47,10 @@ export function SiteFooter() {
           <ExternalLink href={REPO_URL}>Código fuente</ExternalLink>
         </p>
         <p>
-          La carga inicial de partituras proviene del proyecto{' '}
+          La carga inicial de partituras y letras proviene del proyecto{' '}
           <ExternalLink href={SCORES_SOURCE.url}>{SCORES_SOURCE.name}</ExternalLink>, de {SCORES_SOURCE.author}.
         </p>
-        <p>Las obras musicales pertenecen a sus autores y titulares de derechos.</p>
+        <p>Las obras musicales y sus letras pertenecen a sus autores y titulares de derechos.</p>
       </div>
     </footer>
   )

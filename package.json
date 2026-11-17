@@ -1,8 +1,8 @@
 {
   "name": "tangos-a-la-parrilla",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "private": true,
-  "description": "Toque tangos en cualquier tonalidad o imprima las partituras. Play tangos in any key or print the sheet music.",
+  "description": "Toque tangos en cualquier tonalidad o imprima las partituras con su letra. Play tangos in any key or print the sheet music with lyrics.",
   "license": "CC-BY-NC-4.0",
   "author": {
     "name": "Adrián Steinsleger",

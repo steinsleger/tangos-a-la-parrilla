@@ -4,6 +4,23 @@ All notable changes to this project are documented here. The format is based on 
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-11-17
+
+### Added
+
+- Lyrics on every song page, below the score, in two columns on wide screens and one on phones. 37 come from the page text of the newer source files, and the other 391 were transcribed from the PDF of Cancionero del Tango into `lyrics/`. Each song's lyrics are a separate JSON file in `public/lyrics/`, so a page only downloads its own.
+- A "Letra" button next to "Exportar" that jumps to the lyrics.
+- Song titles and descriptions mention the lyrics, and the structured data includes their text as `MusicComposition.lyrics`.
+
+### Changed
+
+- The PDF export adds the lyrics on a page of their own after the score.
+- The index title and description mention chords and lyrics.
+
+### Known issues
+
+- `Milonguera de ley` is still left out until its key signature is fixed in the source.
+
 ## [1.1.0] - 2026-11-15
 
 ### Added
@@ -57,6 +74,7 @@ First public release, by Adrián Steinsleger, developed with Claude Opus 5.5. Th
 
 - `Afiches`, `Gricel` and `Siempre se vuelve a Buenos Aires` are missing because their files are binary Sibelius files.
 
-[Unreleased]: https://github.com/steinsleger/tangos-a-la-parrilla/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/steinsleger/tangos-a-la-parrilla/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/steinsleger/tangos-a-la-parrilla/releases/tag/v1.2.0
 [1.1.0]: https://github.com/steinsleger/tangos-a-la-parrilla/releases/tag/v1.1.0
 [1.0.0]: https://github.com/steinsleger/tangos-a-la-parrilla/releases/tag/v1.0.0

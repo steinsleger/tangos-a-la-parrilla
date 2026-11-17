@@ -4,5 +4,6 @@ dist
 public/songs
 public/LICENSE.txt
 src/songs.json
+public/lyrics
 .DS_Store
 .env*

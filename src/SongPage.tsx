@@ -3,6 +3,7 @@ import { creditParts } from './credits.ts'
 import { ExportMenu } from './ExportMenu.tsx'
 import { KeySelect } from './KeySelect.tsx'
 import { chosenKey, keyOptions, originalKey } from './keys.ts'
+import type { Lyrics } from './lyrics.ts'
 import { rememberedKey, rememberKey } from './rememberedKeys.ts'
 import { keyFromUrl, songUrl } from './route.ts'
 import { SITE_NAME, songTitle } from './seo.ts'
@@ -47,7 +48,32 @@ function SongCredits({ song }: { song: Song }) {
   )
 }
 
-export function SongPage({ song }: { song: Song }) {
+const LYRICS_ID = 'letra'
+
+function SongLyrics({ lyrics }: { lyrics: Lyrics }) {
+  return (
+    <section className="lyrics" id={LYRICS_ID} aria-labelledby={`${LYRICS_ID}-titulo`}>
+      <h2 id={`${LYRICS_ID}-titulo`}>Letra</h2>
+      <div className="lyrics-text">
+        {lyrics.map((verses, stanza) => (
+          <p key={stanza}>
+            {/* The newline keeps verses apart where CSS doesn't apply, such as reader modes. */}
+            {verses.map((verse, index) => (
+              <span key={index}>{`${verse}\n`}</span>
+            ))}
+          </p>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+interface SongPageProps {
+  song: Song
+  lyrics?: Lyrics
+}
+
+export function SongPage({ song, lyrics }: SongPageProps) {
   const options = keyOptions(song.fifths, song.mode)
   const [keyName, setKeyName] = useState(originalKey(options).name)
   const selected = options.find((option) => option.name === keyName)!
@@ -67,8 +93,8 @@ export function SongPage({ song }: { song: Song }) {
   }, [song])
 
   useEffect(() => {
-    document.title = songTitle(song, selected.name)
-  }, [song, selected.name])
+    document.title = songTitle(song, selected.name, Boolean(lyrics))
+  }, [song, selected.name, lyrics])
 
   return (
     <main className="page page-wide">
@@ -81,11 +107,17 @@ export function SongPage({ song }: { song: Song }) {
           <SongCredits song={song} />
         </div>
         <div className="song-actions">
+          {lyrics && (
+            <a className="action-link" href={`#${LYRICS_ID}`}>
+              Letra
+            </a>
+          )}
           <ExportMenu slug={song.slug} keyOption={selected} />
           <KeySelect options={options} selected={selected.name} onChange={selectKey} />
         </div>
       </header>
       <SheetMusic slug={song.slug} semitones={selected.semitones} />
+      {lyrics && <SongLyrics lyrics={lyrics} />}
     </main>
   )
 }

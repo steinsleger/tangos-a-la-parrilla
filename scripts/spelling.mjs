@@ -192,6 +192,7 @@ const FIXES = {
   'vez mas': 'vez más',
   'vino mas': 'vino más',
   vió: 'vio',
+  'volverá\n.': 'volverá.\n', // The period fell on its own line, where it also hid a stanza break.
   'Volver a qué, Regin?': '¿Volver a qué, Regin?',
   'Y ahora qué, Regin?': '¿Y ahora qué, Regin?',
   'y el explotan': 'y él explotan',

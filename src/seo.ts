@@ -1,4 +1,5 @@
 import { keyOptions, originalKey } from './keys.ts'
+import type { Lyrics } from './lyrics.ts'
 import { formatDate, lastUpdate } from './releases.ts'
 import { CHANGELOG_PATH, songPath } from './route.ts'
 import type { Song } from './songs.ts'
@@ -38,7 +39,8 @@ export interface PageMeta {
 
 export const absoluteSongUrl = (song: Song) => `${SITE_URL}${songPath(song.slug)}`
 
-export const songTitle = (song: Song, keyName: string) => `${song.title} (${keyName}): partitura y acordes | ${SITE_NAME}`
+export const songTitle = (song: Song, keyName: string, hasLyrics: boolean) =>
+  `${song.title} (${keyName}): ${hasLyrics ? 'partitura, acordes y letra' : 'partitura y acordes'} | ${SITE_NAME}`
 
 const person = (name: string) => ({ '@type': 'Person', name })
 
@@ -56,11 +58,11 @@ const breadcrumb = (name: string, url: string) => ({
 })
 
 export const HOME_SUMMARY: Summary = {
-  es: 'Tangos, valses y milongas para tocar en cualquier tonalidad o imprimir la partitura con acordes.',
-  en: 'Tangos, valses and milongas to play in any key or print as sheet music with chords.',
+  es: 'Tangos, valses y milongas para tocar en cualquier tonalidad o imprimir la partitura con acordes y letra.',
+  en: 'Tangos, valses and milongas to play in any key or print as sheet music with chords and lyrics.',
 }
 
-export function songSummary(song: Song): Summary {
+export function songSummary(song: Song, hasLyrics: boolean): Summary {
   const key = originalKey(keyOptions(song.fifths, song.mode)).name
   const { title, author, lyricist } = song
   const es = [author && `De ${author}`, lyricist && `${author ? 'con letra' : 'Letra'} de ${lyricist}`]
@@ -68,13 +70,13 @@ export function songSummary(song: Song): Summary {
   const credits = (parts: string[]) => (parts.some(Boolean) ? `${parts.filter(Boolean).join(', ')}. ` : '')
 
   return {
-    es: `Toque «${title}» en cualquier tonalidad o imprima la partitura con acordes. ${credits(es)}Tonalidad original: ${key}.`,
-    en: `Play "${title}" in any key or print the sheet music with chords. ${credits(en)}Original key: ${key}.`,
+    es: `Toque «${title}» en cualquier tonalidad o imprima la partitura con acordes${hasLyrics ? ' y la letra' : ''}. ${credits(es)}Tonalidad original: ${key}.`,
+    en: `Play "${title}" in any key or print the sheet music with chords${hasLyrics ? ' and lyrics' : ''}. ${credits(en)}Original key: ${key}.`,
   }
 }
 
 export const HOME_META: PageMeta = {
-  title: `Partituras de tango en cualquier tonalidad | ${SITE_NAME}`,
+  title: `Partituras de tango con acordes y letra en cualquier tonalidad | ${SITE_NAME}`,
   description: HOME_SUMMARY.es,
   url: HOME_URL,
   image: OG_IMAGE,
@@ -95,13 +97,15 @@ export const HOME_META: PageMeta = {
   },
 }
 
-export function songMeta(song: Song): PageMeta {
+const lyricsText = (lyrics: Lyrics) => lyrics.map((verses) => verses.join('\n')).join('\n\n')
+
+export function songMeta(song: Song, lyrics?: Lyrics): PageMeta {
   const key = originalKey(keyOptions(song.fifths, song.mode)).name
   const url = absoluteSongUrl(song)
-  const summary = songSummary(song)
+  const summary = songSummary(song, Boolean(lyrics))
 
   return {
-    title: songTitle(song, key),
+    title: songTitle(song, key, Boolean(lyrics)),
     description: summary.es,
     url,
     image: OG_IMAGE,
@@ -116,6 +120,7 @@ export function songMeta(song: Song): PageMeta {
           musicalKey: key,
           ...(song.author && { composer: person(song.author) }),
           ...(song.lyricist && { lyricist: person(song.lyricist) }),
+          ...(lyrics && { lyrics: { '@type': 'CreativeWork', inLanguage: 'es', text: lyricsText(lyrics) } }),
         },
         breadcrumb(song.title, url),
       ],

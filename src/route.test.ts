@@ -22,6 +22,12 @@ test('round-trips sharps', () => {
 
 test('accepts a sharp typed by hand', () => {
   assert.equal(keyFromUrl('?tono=F', '#m'), 'F#m')
+  assert.equal(keyFromUrl('?tono=F', '#'), 'F#')
+})
+
+test('ignores an anchor after the key', () => {
+  assert.equal(keyFromUrl('?tono=Gm', '#letra'), 'Gm')
+  assert.equal(keyFromUrl('', '#letra'), null)
 })
 
 test('never throws on a malformed key', () => {

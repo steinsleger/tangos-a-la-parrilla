@@ -1,14 +1,17 @@
-import { copyFileSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
-import { join } from 'node:path'
+import { copyFileSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs'
+import { basename, join } from 'node:path'
 import { sitemap } from '../src/seo.ts'
 import { chordHarmony } from './chords.mjs'
 import credits from './credits.json' with { type: 'json' }
+import { lyricsInScore, stanzas } from './lyrics.mjs'
 import { fixSpelling } from './spelling.mjs'
 
 const SOURCE_DIR = 'scores'
 const OUTPUT_DIR = 'public/songs'
 const INDEX_FILE = 'src/songs.json'
 const SITEMAP_FILE = 'public/sitemap.xml'
+const TRANSCRIBED_LYRICS_DIR = 'lyrics'
+const LYRICS_DIR = 'public/lyrics'
 
 const WRONG_SOURCE_TITLES = {
   'Campo afuera cancionero.xml': 'Campo afuera',
@@ -57,11 +60,11 @@ const DIRECTION =
 const WORDS = /<words([^>]*)>(.*?)<\/words>/gs
 const CHORD_FONT = /font-family=["'][^"']*Chords/
 
-const XML_ENTITIES = { amp: '&', apos: "'" }
+const XML_ENTITIES = { amp: '&', apos: "'", quot: '"', lt: '<', gt: '>' }
 
 const collapseWhitespace = (text) => text.replace(/\s+/g, ' ').trim()
 
-const decodeEntities = (text) => text.replace(/&(amp|apos);/g, (_, name) => XML_ENTITIES[name])
+const decodeEntities = (text) => text.replace(/&(amp|apos|quot|lt|gt);/g, (_, name) => XML_ENTITIES[name])
 
 const readTag = (xml, pattern) => decodeEntities(xml.match(pattern)?.[1] ?? '')
 
@@ -112,8 +115,15 @@ function parseSong(xml, fileName) {
   return { slug, title, author, lyricist, ...credits[slug], fifths: Number(fifths), mode }
 }
 
-rmSync(OUTPUT_DIR, { recursive: true, force: true })
-mkdirSync(OUTPUT_DIR, { recursive: true })
+function transcribedLyrics(slug) {
+  const file = join(TRANSCRIBED_LYRICS_DIR, `${slug}.txt`)
+  return existsSync(file) ? readFileSync(file, 'utf8') : ''
+}
+
+for (const dir of [OUTPUT_DIR, LYRICS_DIR]) {
+  rmSync(dir, { recursive: true, force: true })
+  mkdirSync(dir, { recursive: true })
+}
 
 const songs = []
 const slugs = new Set()
@@ -134,6 +144,13 @@ for (const fileName of readdirSync(SOURCE_DIR).filter((name) => name.endsWith('.
 
   writeFileSync(join(OUTPUT_DIR, `${song.slug}.xml`), xml)
   songs.push(song)
+
+  const lyrics = stanzas(decodeEntities(lyricsInScore(xml)) || transcribedLyrics(song.slug))
+  if (lyrics.length > 0) writeFileSync(join(LYRICS_DIR, `${song.slug}.json`), JSON.stringify(lyrics))
+}
+
+for (const fileName of readdirSync(TRANSCRIBED_LYRICS_DIR)) {
+  if (!slugs.has(basename(fileName, '.txt'))) throw new Error(`No song for lyrics ${fileName}`)
 }
 
 songs.sort((a, b) => sortableTitle(a).localeCompare(sortableTitle(b), 'es'))

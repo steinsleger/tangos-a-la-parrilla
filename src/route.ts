@@ -9,5 +9,8 @@ export const songUrl = (slug: string, keyName?: string) =>
 
 export const slugFromPath = (path: string) => path.match(/^\/partituras\/([^/]+)\/?$/)?.[1]
 
-// A sharp typed by hand lands in the fragment: `?tono=F#m`.
-export const keyFromUrl = (search: string, hash: string) => new URLSearchParams(search + hash).get(KEY_PARAM)
+// A sharp typed by hand lands in the fragment: `?tono=F#m`. Any other fragment, like `#letra`, is an anchor.
+const TYPED_SHARP = /^#m?$/
+
+export const keyFromUrl = (search: string, hash: string) =>
+  new URLSearchParams(search + (TYPED_SHARP.test(hash) ? hash : '')).get(KEY_PARAM)
