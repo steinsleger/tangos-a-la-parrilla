@@ -52,6 +52,7 @@ const LYRICS_ID = 'letra'
 
 // Replacing the history entry keeps Back on the index, as key changes do.
 function showLyrics(event: MouseEvent) {
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return
   event.preventDefault()
   location.replace(`#${LYRICS_ID}`)
 }

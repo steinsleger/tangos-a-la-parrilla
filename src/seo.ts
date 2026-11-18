@@ -99,6 +99,15 @@ export const HOME_META: PageMeta = {
 
 const lyricsText = (lyrics: Lyrics) => lyrics.map((verses) => verses.join('\n')).join('\n\n')
 
+interface SongJsonLd {
+  '@graph'?: { lyrics?: { text: string } }[]
+}
+
+export function lyricsInJsonLd(jsonLd: SongJsonLd): Lyrics | undefined {
+  const text = jsonLd['@graph']?.find((node) => node.lyrics)?.lyrics?.text
+  return text?.split('\n\n').map((stanza) => stanza.split('\n'))
+}
+
 export function songMeta(song: Song, lyrics?: Lyrics): PageMeta {
   const key = originalKey(keyOptions(song.fifths, song.mode)).name
   const url = absoluteSongUrl(song)

@@ -2,13 +2,13 @@ import { existsSync, readFileSync } from 'node:fs'
 import { renderToStaticMarkup, renderToString } from 'react-dom/server'
 import { App } from './App.tsx'
 import { Head } from './Head.tsx'
-import { lyricsUrl, type Lyrics } from './lyrics.ts'
+import { lyricsFile, type Lyrics } from './lyrics.ts'
 import { CHANGELOG_PATH, songPath } from './route.ts'
 import { CHANGELOG_META, HOME_META, notFoundMeta, songMeta, type PageMeta } from './seo.ts'
 import { songs } from './songs.ts'
 
 function lyricsOf(slug: string): Lyrics | undefined {
-  const file = `public${lyricsUrl(slug)}`
+  const file = lyricsFile(slug)
   return existsSync(file) ? JSON.parse(readFileSync(file, 'utf8')) : undefined
 }
 
@@ -36,5 +36,5 @@ export const pages: Page[] = [
 
 export const renderPage = ({ path, meta, lyrics }: Page) => ({
   app: renderToString(<App path={path} lyrics={lyrics} />),
-  head: renderToStaticMarkup(<Head meta={meta} lyrics={lyrics} />),
+  head: renderToStaticMarkup(<Head meta={meta} />),
 })

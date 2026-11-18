@@ -40,7 +40,7 @@ Si tiene instalada de forma global una versión de pnpm anterior a la 12, actual
 | `pnpm test` | Corre los tests |
 | `pnpm build` | Revisa los tipos y pre-renderiza el sitio estático en `dist/` |
 | `pnpm preview` | Sirve `dist/` para probarlo antes de publicar |
-| `pnpm songs` | Vuelve a generar `public/songs/`, `src/songs.json` y `public/lyrics/` |
+| `pnpm songs` | Vuelve a generar `public/songs/`, `src/songs.json` y `src/lyrics/` |
 
 El resultado es un sitio estático con una página HTML por tema, publicado en [Vercel](https://vercel.com). [`vercel.json`](vercel.json) define los comandos, y la versión de Node 24 importa porque Node 26 ya no incluye Corepack.
 
@@ -106,7 +106,7 @@ If you have a global pnpm older than 12, update it or make sure Corepack comes f
 | `pnpm test` | Runs the tests |
 | `pnpm build` | Type-checks and prerenders the static site into `dist/` |
 | `pnpm preview` | Serves `dist/` to try it before publishing |
-| `pnpm songs` | Regenerates `public/songs/`, `src/songs.json` and `public/lyrics/` |
+| `pnpm songs` | Regenerates `public/songs/`, `src/songs.json` and `src/lyrics/` |
 
 The output is a static site with one HTML page per song, deployed on [Vercel](https://vercel.com). [`vercel.json`](vercel.json) sets the commands, and Node 24 matters because Node 26 no longer ships Corepack.
 

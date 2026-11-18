@@ -1,11 +1,10 @@
-import { decodeEntities } from './xml.mjs'
+import { collapseWhitespace, decodeEntities } from './xml.mjs'
 
 const PAGE_TEXT = /<credit-words([^>]*)>([^<]*)<\/credit-words>/g
 // Sibelius right-aligns the credits. Titles, page numbers and notes such as "Forma A/A/B" take one line.
 const isLyrics = (attributes, text) =>
   !/justify=["']right["']/.test(attributes) && text.split('\n').filter((line) => line.trim()).length > 1
 
-// Scores exported straight from Sibelius carry their lyrics as page text, in reading order.
 export const lyricsInScore = (xml) =>
   [...xml.matchAll(PAGE_TEXT)]
     .filter(([, attributes, text]) => isLyrics(attributes, text))
@@ -15,10 +14,5 @@ export const lyricsInScore = (xml) =>
 export const stanzas = (text) =>
   text
     .split(/\n\s*\n/)
-    .map((stanza) =>
-      stanza
-        .split('\n')
-        .map((line) => line.replace(/\s+/g, ' ').trim())
-        .filter(Boolean),
-    )
+    .map((stanza) => stanza.split('\n').map(collapseWhitespace).filter(Boolean))
     .filter((lines) => lines.length > 0)

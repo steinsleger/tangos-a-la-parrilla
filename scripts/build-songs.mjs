@@ -5,14 +5,14 @@ import { chordHarmony } from './chords.mjs'
 import credits from './credits.json' with { type: 'json' }
 import { lyricsInScore, stanzas } from './lyrics.mjs'
 import { fixSpelling } from './spelling.mjs'
-import { decodeEntities } from './xml.mjs'
+import { collapseWhitespace, decodeEntities } from './xml.mjs'
 
 const SOURCE_DIR = 'scores'
 const OUTPUT_DIR = 'public/songs'
 const INDEX_FILE = 'src/songs.json'
 const SITEMAP_FILE = 'public/sitemap.xml'
 const TRANSCRIBED_LYRICS_DIR = 'lyrics'
-const LYRICS_DIR = 'public/lyrics'
+const LYRICS_DIR = 'src/lyrics'
 
 const WRONG_SOURCE_TITLES = {
   'Campo afuera cancionero.xml': 'Campo afuera',
@@ -60,8 +60,6 @@ const DIRECTION =
   /<direction[ >].*?<\/direction>(?:\s*<direction[ >](?:(?!<\/direction>).)*<words[^>]*>(?:[#b]\d+|\d+[#b])<\/words>.*?<\/direction>)?/gs
 const WORDS = /<words([^>]*)>(.*?)<\/words>/gs
 const CHORD_FONT = /font-family=["'][^"']*Chords/
-
-const collapseWhitespace = (text) => text.replace(/\s+/g, ' ').trim()
 
 const readTag = (xml, pattern) => decodeEntities(xml.match(pattern)?.[1] ?? '')
 
@@ -112,7 +110,6 @@ function parseSong(xml, fileName) {
   return { slug, title, author, lyricist, ...credits[slug], fifths: Number(fifths), mode }
 }
 
-// Lyrics in a score are corrected in spelling.mjs, so a transcription of them would silently go unused.
 function lyricsOf(xml, slug) {
   const inScore = lyricsInScore(xml)
   const file = join(TRANSCRIBED_LYRICS_DIR, `${slug}.txt`)

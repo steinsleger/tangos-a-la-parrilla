@@ -9,7 +9,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - `pnpm test`: unit tests in `src/*.test.ts` and `scripts/*.test.mjs`
 - `pnpm build`: type-check, build and prerender
 - `pnpm dev`: development server
-- `pnpm songs`: regenerate `public/songs/`, `src/songs.json` and `public/lyrics/`
+- `pnpm songs`: regenerate `public/songs/`, `src/songs.json` and `src/lyrics/`
 
 ## Map
 
@@ -24,7 +24,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - `src/seo.ts`: titles, descriptions, structured data and sitemap. `src/Head.tsx`: head tags. `src/entry-server.tsx`: the list of pages.
 - `src/releases.ts`: release notes in Spanish and the date of the last update. They only list what is already on the site, never pending work. `src/Changelog.tsx`: the `/novedades/` page and the button that links to it from the index and the footer.
 - `src/todotango.json`: links to Todo Tango. A song is only linked if the work's page there names one of its credited authors, because many titles are shared by different works.
-- `src/lyrics.ts`: reads a prerendered page's lyrics from its inline JSON. Only the dev server, which renders from scratch, fetches them from `public/lyrics/`, where the build writes a JSON file per song.
+- `src/lyrics.ts`: reads a prerendered page's lyrics from its structured data. Only the dev server, which renders from scratch, fetches them from `src/lyrics/`, where the build writes a JSON file per song that is never deployed.
 - `src/keys.ts`: key names and semitone maths. `src/route.ts`: hash URLs. `src/rememberedKeys.ts`: localStorage.
 - `src/SheetMusic.tsx`: OSMD wrapper. `src/KeySelect.tsx`: ARIA listbox. `src/ExportMenu.tsx`: ARIA menu for PDF and XML. `src/useDropdown.ts`: opening, closing and keyboard logic shared by both. `src/SiteFooter.tsx`: feedback links and credits.
 - `src/musicXml.ts`: score URLs and the XML export, transposed in the browser to the selected key.
@@ -37,7 +37,7 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - Chord symbols typed as text become `<harmony>` in the build, never on the page. Boxed text is a section label and stays. A chord font text the parser can't read fails the build: add it to `TEXT_DIRECTION_FIXES` with only what the score confirms.
 - OSMD runs with `drawCredits: false` and no part names, because the page header shows the title and credits and the newer sources carry lyrics as page text.
 - Lyrics come from the score's page text, or else from `lyrics/<slug>.txt`. Correct lyrics that come from an XML in `scripts/spelling.mjs`, and a transcription in its own file. The build fails if a file in `lyrics/` matches no song or repeats lyrics its score already has, and it writes nothing until every source has been read.
-- Lyrics are prerendered under the score, and the page also carries them as inline JSON that `main.tsx` reads before hydrating, so the first render matches without waiting for the network. Never put them in `songs.json`, which every page downloads.
+- Lyrics are prerendered under the score, and `main.tsx` reads them back from the page's JSON-LD before hydrating, so the first render matches without waiting for the network. Never put them in `songs.json`, which every page downloads.
 - In OSMD 2.2.1 `render()` does not apply a transposition. Set `Sheet.Transpose`, then call `updateGraphic()` and `render()`.
 - Key names must match OSMD's spelling table, so `D#m`, not `Ebm`.
 - The key comes from `?tono=`, then the remembered key, then the original. Only a choice made in the selector is saved to localStorage, never a key that came from a link. Key changes and the jump to the lyrics replace the history entry, so Back returns to the index.

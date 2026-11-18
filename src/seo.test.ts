@@ -1,6 +1,15 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { CHANGELOG_META, HOME_META, scriptJson, sitemap, songMeta, songSummary } from './seo.ts'
+import {
+  CHANGELOG_META,
+  HOME_META,
+  lyricsInJsonLd,
+  scriptJson,
+  sitemap,
+  songMeta,
+  songSummary,
+  type PageMeta,
+} from './seo.ts'
 import type { Song } from './songs.ts'
 
 const volver: Song = {
@@ -38,6 +47,15 @@ test('offers the lyrics when the song has them', () => {
     /"lyrics":\{"@type":"CreativeWork","inLanguage":"es","text":"Volver\\ncon la frente marchita\\n\\nSentir\\nque es un soplo la vida"\}/,
   )
   assert.doesNotMatch(JSON.stringify(songMeta(volver).jsonLd), /lyrics"/)
+})
+
+test('reads the lyrics back from the structured data in the page', () => {
+  const lyrics = [['Volver', '<con la frente marchita>'], ['Sentir']]
+  const inPage = (meta: PageMeta) => JSON.parse(scriptJson(meta.jsonLd!))
+
+  assert.deepEqual(lyricsInJsonLd(inPage(songMeta(volver, lyrics))), lyrics)
+  assert.equal(lyricsInJsonLd(inPage(songMeta(volver))), undefined)
+  assert.equal(lyricsInJsonLd(inPage(HOME_META)), undefined)
 })
 
 test('summarizes a song in Spanish and English', () => {

@@ -254,9 +254,11 @@ a {
   font-size: clamp(1.75rem, 5vw, 2.5rem);
 }
 
+/* Aligned right even when they wrap, so the key list, which opens to the left, stays on screen. */
 .song-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 8px;
 }
 

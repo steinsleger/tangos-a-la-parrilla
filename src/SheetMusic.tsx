@@ -18,8 +18,12 @@ const PRINT_PAGE_HEIGHT = 1340
 
 const zoomFor = (width: number) => Math.min(1, Math.max(MIN_ZOOM, width / FULL_SIZE_WIDTH))
 
-// The drawn score pushes down what the URL points to, like the lyrics at #letra, and not every browser keeps it in view.
-const returnToAnchor = () => document.getElementById(location.hash.slice(1))?.scrollIntoView()
+// Safari doesn't anchor scrolling, so a reader already past the score, as at #letra, would be pushed away as it draws.
+function renderInPlace(sheet: OpenSheetMusicDisplay, frame: HTMLElement) {
+  const bottom = frame.getBoundingClientRect().bottom
+  sheet.render()
+  if (bottom <= 0) scrollBy(0, frame.getBoundingClientRect().bottom - bottom)
+}
 
 interface SheetMusicProps {
   slug: string
@@ -27,6 +31,7 @@ interface SheetMusicProps {
 }
 
 export function SheetMusic({ slug, semitones }: SheetMusicProps) {
+  const frameRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const [osmd, setOsmd] = useState<OpenSheetMusicDisplay>()
   const [hasFailed, setHasFailed] = useState(false)
@@ -57,7 +62,7 @@ export function SheetMusic({ slug, semitones }: SheetMusicProps) {
     try {
       osmd.Sheet.Transpose = semitones
       osmd.updateGraphic()
-      osmd.render()
+      renderInPlace(osmd, frameRef.current!)
     } catch {
       setHasFailed(true)
     }
@@ -69,16 +74,13 @@ export function SheetMusic({ slug, semitones }: SheetMusicProps) {
     const sheet = osmd
     const container = containerRef.current!
     let renderedWidth = 0
-    let isFirstLayout = true
 
     const observer = new ResizeObserver(([{ contentRect }]) => {
       if (contentRect.width === renderedWidth) return
 
       renderedWidth = contentRect.width
       sheet.zoom = zoomFor(renderedWidth)
-      sheet.render()
-      if (isFirstLayout) returnToAnchor()
-      isFirstLayout = false
+      renderInPlace(sheet, frameRef.current!)
     })
 
     // Printing changes the container's width, and a render at another zoom would repaginate the score.
@@ -109,7 +111,7 @@ export function SheetMusic({ slug, semitones }: SheetMusicProps) {
   }, [osmd])
 
   return (
-    <div className="sheet-frame">
+    <div ref={frameRef} className="sheet-frame">
       {hasFailed && <p role="alert">No se pudo cargar la partitura.</p>}
       {!osmd && !hasFailed && (
         <p role="status" className="sheet-status">
