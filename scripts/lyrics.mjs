@@ -1,14 +1,15 @@
-const PAGE_TEXT = /<credit-words[^>]*>([^<]*)<\/credit-words>/g
-// Titles, credits, page numbers and notes such as "Forma A/A/B" take up to three lines.
-const MIN_LYRICS_LINES = 4
+import { decodeEntities } from './xml.mjs'
 
-const lineCount = (text) => text.split('\n').filter((line) => line.trim()).length
+const PAGE_TEXT = /<credit-words([^>]*)>([^<]*)<\/credit-words>/g
+// Sibelius right-aligns the credits. Titles, page numbers and notes such as "Forma A/A/B" take one line.
+const isLyrics = (attributes, text) =>
+  !/justify=["']right["']/.test(attributes) && text.split('\n').filter((line) => line.trim()).length > 1
 
 // Scores exported straight from Sibelius carry their lyrics as page text, in reading order.
 export const lyricsInScore = (xml) =>
   [...xml.matchAll(PAGE_TEXT)]
-    .map(([, text]) => text)
-    .filter((text) => lineCount(text) >= MIN_LYRICS_LINES)
+    .filter(([, attributes, text]) => isLyrics(attributes, text))
+    .map(([, , text]) => decodeEntities(text))
     .join('\n\n')
 
 export const stanzas = (text) =>

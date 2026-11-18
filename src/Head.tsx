@@ -1,6 +1,12 @@
-import { SITE_NAME, serializeJsonLd, type PageMeta } from './seo.ts'
+import { LYRICS_DATA_ID, type Lyrics } from './lyrics.ts'
+import { SITE_NAME, scriptJson, type PageMeta } from './seo.ts'
 
-export function Head({ meta }: { meta: PageMeta }) {
+interface HeadProps {
+  meta: PageMeta
+  lyrics?: Lyrics
+}
+
+export function Head({ meta, lyrics }: HeadProps) {
   return (
     <>
       <title>{meta.title}</title>
@@ -15,7 +21,10 @@ export function Head({ meta }: { meta: PageMeta }) {
       {meta.url && <meta property="og:url" content={meta.url} />}
       <meta name="twitter:card" content="summary_large_image" />
       {meta.jsonLd && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(meta.jsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: scriptJson(meta.jsonLd) }} />
+      )}
+      {lyrics && (
+        <script type="application/json" id={LYRICS_DATA_ID} dangerouslySetInnerHTML={{ __html: scriptJson(lyrics) }} />
       )}
     </>
   )

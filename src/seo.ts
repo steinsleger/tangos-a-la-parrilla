@@ -161,7 +161,7 @@ export const notFoundMeta: PageMeta = {
   image: OG_IMAGE,
 }
 
-export const serializeJsonLd = (data: object) => JSON.stringify(data).replace(/</g, '\\u003c')
+export const scriptJson = (data: object) => JSON.stringify(data).replace(/</g, '\\u003c')
 
 const sitemapEntry = (url: string, lastmod?: string) =>
   `<url><loc>${url}</loc>${lastmod ? `<lastmod>${lastmod}</lastmod>` : ''}</url>`

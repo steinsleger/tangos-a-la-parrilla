@@ -18,13 +18,13 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - `scripts/chords.mjs`: turns chord symbols typed as text into `<harmony>`, including Opus Chords glyphs (`©` sharp, `¨` flat, `º` diminished, `Ø` half-diminished, `^` major seventh) and accidentals written after the degree (`9b`). `TEXT_DIRECTION_FIXES` in the build covers texts it can't read.
 - `scripts/spelling.mjs`: spelling fixes. A word that is only wrong in context goes in with its phrase.
 - `lyrics/`: lyrics of the songs whose XML has none, transcribed from the PDF of Cancionero del Tango. One file per slug, one verse per line, stanzas separated by a blank line. Unlike `scores/`, these files are corrected in place.
-- `scripts/lyrics.mjs`: finds the lyrics among a score's page texts and splits them into stanzas.
+- `scripts/lyrics.mjs`: finds the lyrics among a score's page texts and splits them into stanzas. Lyrics are the page texts with more than one line that aren't right-aligned, where Sibelius puts the credits.
 - `scripts/credits.json`: author and lyricist of every song. The `people` keys in `src/todotango.json` are these displayed names, so a change here must be made there too.
 - `scripts/prerender.mjs`: writes every page into `dist/`.
 - `src/seo.ts`: titles, descriptions, structured data and sitemap. `src/Head.tsx`: head tags. `src/entry-server.tsx`: the list of pages.
 - `src/releases.ts`: release notes in Spanish and the date of the last update. They only list what is already on the site, never pending work. `src/Changelog.tsx`: the `/novedades/` page and the button that links to it from the index and the footer.
 - `src/todotango.json`: links to Todo Tango. A song is only linked if the work's page there names one of its credited authors, because many titles are shared by different works.
-- `src/lyrics.ts`: fetches one song's lyrics from `public/lyrics/`, where the build writes a JSON file per song.
+- `src/lyrics.ts`: reads a prerendered page's lyrics from its inline JSON. Only the dev server, which renders from scratch, fetches them from `public/lyrics/`, where the build writes a JSON file per song.
 - `src/keys.ts`: key names and semitone maths. `src/route.ts`: hash URLs. `src/rememberedKeys.ts`: localStorage.
 - `src/SheetMusic.tsx`: OSMD wrapper. `src/KeySelect.tsx`: ARIA listbox. `src/ExportMenu.tsx`: ARIA menu for PDF and XML. `src/useDropdown.ts`: opening, closing and keyboard logic shared by both. `src/SiteFooter.tsx`: feedback links and credits.
 - `src/musicXml.ts`: score URLs and the XML export, transposed in the browser to the selected key.
@@ -36,11 +36,11 @@ Use pnpm 12 through Corepack (`corepack enable`, or prefix commands with `corepa
 - Use `IntervalTransposeCalculator`. The default one misspells leading tones.
 - Chord symbols typed as text become `<harmony>` in the build, never on the page. Boxed text is a section label and stays. A chord font text the parser can't read fails the build: add it to `TEXT_DIRECTION_FIXES` with only what the score confirms.
 - OSMD runs with `drawCredits: false` and no part names, because the page header shows the title and credits and the newer sources carry lyrics as page text.
-- Lyrics come from the score's page text, or else from `lyrics/<slug>.txt`. Correct lyrics that come from an XML in `scripts/spelling.mjs`, and a transcription in its own file. The build fails if a file in `lyrics/` matches no song.
-- Lyrics are prerendered under the score, and `main.tsx` loads them before hydrating so the first render matches. Never put them in `songs.json`, which every page downloads.
+- Lyrics come from the score's page text, or else from `lyrics/<slug>.txt`. Correct lyrics that come from an XML in `scripts/spelling.mjs`, and a transcription in its own file. The build fails if a file in `lyrics/` matches no song or repeats lyrics its score already has, and it writes nothing until every source has been read.
+- Lyrics are prerendered under the score, and the page also carries them as inline JSON that `main.tsx` reads before hydrating, so the first render matches without waiting for the network. Never put them in `songs.json`, which every page downloads.
 - In OSMD 2.2.1 `render()` does not apply a transposition. Set `Sheet.Transpose`, then call `updateGraphic()` and `render()`.
 - Key names must match OSMD's spelling table, so `D#m`, not `Ebm`.
-- The key comes from `?tono=`, then the remembered key, then the original. Only a choice made in the selector is saved to localStorage, never a key that came from a link. Key changes use `history.replaceState` so Back returns to the index.
+- The key comes from `?tono=`, then the remembered key, then the original. Only a choice made in the selector is saved to localStorage, never a key that came from a link. Key changes and the jump to the lyrics replace the history entry, so Back returns to the index.
 - The first client render must match the prerendered HTML, so read the URL and localStorage in effects, never during render.
 - A URL with `?tono=` is canonicalized to the song's clean URL. Do not create pages per key.
 - Every page needs its own title and meta description. All visible text is in Spanish; English only appears in the structured data. Descriptions stay in metadata: never show them on the page, and never hide text from users to show it to search engines.

@@ -18,6 +18,9 @@ const PRINT_PAGE_HEIGHT = 1340
 
 const zoomFor = (width: number) => Math.min(1, Math.max(MIN_ZOOM, width / FULL_SIZE_WIDTH))
 
+// The drawn score pushes down what the URL points to, like the lyrics at #letra, and not every browser keeps it in view.
+const returnToAnchor = () => document.getElementById(location.hash.slice(1))?.scrollIntoView()
+
 interface SheetMusicProps {
   slug: string
   semitones: number
@@ -66,6 +69,7 @@ export function SheetMusic({ slug, semitones }: SheetMusicProps) {
     const sheet = osmd
     const container = containerRef.current!
     let renderedWidth = 0
+    let isFirstLayout = true
 
     const observer = new ResizeObserver(([{ contentRect }]) => {
       if (contentRect.width === renderedWidth) return
@@ -73,6 +77,8 @@ export function SheetMusic({ slug, semitones }: SheetMusicProps) {
       renderedWidth = contentRect.width
       sheet.zoom = zoomFor(renderedWidth)
       sheet.render()
+      if (isFirstLayout) returnToAnchor()
+      isFirstLayout = false
     })
 
     // Printing changes the container's width, and a render at another zoom would repaginate the score.

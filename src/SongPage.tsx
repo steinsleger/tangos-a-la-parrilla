@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import { creditParts } from './credits.ts'
 import { ExportMenu } from './ExportMenu.tsx'
 import { KeySelect } from './KeySelect.tsx'
 import { chosenKey, keyOptions, originalKey } from './keys.ts'
 import type { Lyrics } from './lyrics.ts'
 import { rememberedKey, rememberKey } from './rememberedKeys.ts'
-import { keyFromUrl, songUrl } from './route.ts'
+import { anchorFromUrl, keyFromUrl, songUrl } from './route.ts'
 import { SITE_NAME, songTitle } from './seo.ts'
 import { SheetMusic } from './SheetMusic.tsx'
 import type { Song } from './songs.ts'
@@ -50,6 +50,12 @@ function SongCredits({ song }: { song: Song }) {
 
 const LYRICS_ID = 'letra'
 
+// Replacing the history entry keeps Back on the index, as key changes do.
+function showLyrics(event: MouseEvent) {
+  event.preventDefault()
+  location.replace(`#${LYRICS_ID}`)
+}
+
 function SongLyrics({ lyrics }: { lyrics: Lyrics }) {
   return (
     <section className="lyrics" id={LYRICS_ID} aria-labelledby={`${LYRICS_ID}-titulo`}>
@@ -80,7 +86,7 @@ export function SongPage({ song, lyrics }: SongPageProps) {
 
   function showKey(name?: string) {
     if (name) setKeyName(name)
-    history.replaceState(null, '', songUrl(song.slug, name))
+    history.replaceState(null, '', songUrl(song.slug, name) + anchorFromUrl(location.href))
   }
 
   function selectKey(name: string) {
@@ -89,7 +95,7 @@ export function SongPage({ song, lyrics }: SongPageProps) {
   }
 
   useEffect(() => {
-    showKey(chosenKey(options, keyFromUrl(location.search, location.hash), rememberedKey(song.slug))?.name)
+    showKey(chosenKey(options, keyFromUrl(location.href), rememberedKey(song.slug))?.name)
   }, [song])
 
   useEffect(() => {
@@ -108,7 +114,7 @@ export function SongPage({ song, lyrics }: SongPageProps) {
         </div>
         <div className="song-actions">
           {lyrics && (
-            <a className="action-link" href={`#${LYRICS_ID}`}>
+            <a className="action-button" href={`#${LYRICS_ID}`} onClick={showLyrics}>
               Letra
             </a>
           )}

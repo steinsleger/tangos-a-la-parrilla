@@ -36,5 +36,5 @@ export const pages: Page[] = [
 
 export const renderPage = ({ path, meta, lyrics }: Page) => ({
   app: renderToString(<App path={path} lyrics={lyrics} />),
-  head: renderToStaticMarkup(<Head meta={meta} />),
+  head: renderToStaticMarkup(<Head meta={meta} lyrics={lyrics} />),
 })

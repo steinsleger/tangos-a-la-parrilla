@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict'
 import { test } from 'node:test'
-import { CHANGELOG_META, HOME_META, serializeJsonLd, sitemap, songMeta, songSummary } from './seo.ts'
+import { CHANGELOG_META, HOME_META, scriptJson, sitemap, songMeta, songSummary } from './seo.ts'
 import type { Song } from './songs.ts'
 
 const volver: Song = {
@@ -76,7 +76,7 @@ test('keeps the English description out of the visible text', () => {
 })
 
 test('cannot close its script tag from the data', () => {
-  assert.doesNotMatch(serializeJsonLd({ name: '</script>' }), /<\/script>/)
+  assert.doesNotMatch(scriptJson({ name: '</script>' }), /<\/script>/)
 })
 
 test('lists the home page, the release notes and every song in the sitemap', () => {

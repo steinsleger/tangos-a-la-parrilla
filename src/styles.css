@@ -256,17 +256,24 @@ a {
 
 .song-actions {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.action-link {
-  display: inline-flex;
-  align-items: center;
+.action-button,
+.dropdown-button {
   min-height: 44px;
   padding: 8px 14px;
   border: 1px solid var(--muted);
   border-radius: 6px;
   background: #fff;
+  color: inherit;
+  font: inherit;
+}
+
+.action-button {
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
 }
 
@@ -328,13 +335,7 @@ a {
 }
 
 .dropdown-button {
-  min-height: 44px;
-  padding: 8px 36px 8px 14px;
-  border: 1px solid var(--muted);
-  border-radius: 6px;
-  background: #fff;
-  color: inherit;
-  font: inherit;
+  padding-right: 36px;
   cursor: pointer;
   position: relative;
 }
@@ -375,7 +376,7 @@ a {
   width: 200px;
 }
 
-/* On narrow screens the export button sits at the left edge, so its list opens to the right. */
+/* Its short options fit in the button's width, so opening to the right keeps the list on screen wherever the actions wrap. */
 .export-list {
   left: 0;
   min-width: 100%;

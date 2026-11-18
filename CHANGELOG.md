@@ -8,7 +8,7 @@ All notable changes to this project are documented here. The format is based on 
 
 ### Added
 
-- Lyrics on every song page, below the score, in two columns on wide screens and one on phones. 37 come from the page text of the newer source files, and the other 391 were transcribed from the PDF of Cancionero del Tango into `lyrics/`. Each song's lyrics are a separate JSON file in `public/lyrics/`, so a page only downloads its own.
+- Lyrics on every song page, below the score, in two columns on wide screens and one on phones. 37 come from the page text of the newer source files, and the other 391 were transcribed from the PDF of Cancionero del Tango into `lyrics/`. Each page carries only its own lyrics, inline, so hydration never waits for them and the index downloads none.
 - A "Letra" button next to "Exportar" that jumps to the lyrics.
 - Song titles and descriptions mention the lyrics, and the structured data includes their text as `MusicComposition.lyrics`.
 

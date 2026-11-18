@@ -5,6 +5,7 @@ import { chordHarmony } from './chords.mjs'
 import credits from './credits.json' with { type: 'json' }
 import { lyricsInScore, stanzas } from './lyrics.mjs'
 import { fixSpelling } from './spelling.mjs'
+import { decodeEntities } from './xml.mjs'
 
 const SOURCE_DIR = 'scores'
 const OUTPUT_DIR = 'public/songs'
@@ -60,11 +61,7 @@ const DIRECTION =
 const WORDS = /<words([^>]*)>(.*?)<\/words>/gs
 const CHORD_FONT = /font-family=["'][^"']*Chords/
 
-const XML_ENTITIES = { amp: '&', apos: "'", quot: '"', lt: '<', gt: '>' }
-
 const collapseWhitespace = (text) => text.replace(/\s+/g, ' ').trim()
-
-const decodeEntities = (text) => text.replace(/&(amp|apos|quot|lt|gt);/g, (_, name) => XML_ENTITIES[name])
 
 const readTag = (xml, pattern) => decodeEntities(xml.match(pattern)?.[1] ?? '')
 
@@ -115,17 +112,16 @@ function parseSong(xml, fileName) {
   return { slug, title, author, lyricist, ...credits[slug], fifths: Number(fifths), mode }
 }
 
-function transcribedLyrics(slug) {
+// Lyrics in a score are corrected in spelling.mjs, so a transcription of them would silently go unused.
+function lyricsOf(xml, slug) {
+  const inScore = lyricsInScore(xml)
   const file = join(TRANSCRIBED_LYRICS_DIR, `${slug}.txt`)
-  return existsSync(file) ? readFileSync(file, 'utf8') : ''
+  if (!existsSync(file)) return stanzas(inScore)
+  if (inScore) throw new Error(`${file} repeats the lyrics in its score. Correct those in scripts/spelling.mjs`)
+  return stanzas(readFileSync(file, 'utf8'))
 }
 
-for (const dir of [OUTPUT_DIR, LYRICS_DIR]) {
-  rmSync(dir, { recursive: true, force: true })
-  mkdirSync(dir, { recursive: true })
-}
-
-const songs = []
+const builds = []
 const slugs = new Set()
 
 for (const fileName of readdirSync(SOURCE_DIR).filter((name) => name.endsWith('.xml'))) {
@@ -141,18 +137,25 @@ for (const fileName of readdirSync(SOURCE_DIR).filter((name) => name.endsWith('.
 
   if (slugs.has(song.slug)) throw new Error(`Duplicate slug "${song.slug}" from ${fileName}`)
   slugs.add(song.slug)
-
-  writeFileSync(join(OUTPUT_DIR, `${song.slug}.xml`), xml)
-  songs.push(song)
-
-  const lyrics = stanzas(decodeEntities(lyricsInScore(xml)) || transcribedLyrics(song.slug))
-  if (lyrics.length > 0) writeFileSync(join(LYRICS_DIR, `${song.slug}.json`), JSON.stringify(lyrics))
+  builds.push({ song, xml, lyrics: lyricsOf(xml, song.slug) })
 }
 
-for (const fileName of readdirSync(TRANSCRIBED_LYRICS_DIR)) {
+for (const fileName of readdirSync(TRANSCRIBED_LYRICS_DIR).filter((name) => name.endsWith('.txt'))) {
   if (!slugs.has(basename(fileName, '.txt'))) throw new Error(`No song for lyrics ${fileName}`)
 }
 
+// Nothing is written until every source has been read, so a failed run leaves the last build intact.
+for (const dir of [OUTPUT_DIR, LYRICS_DIR]) {
+  rmSync(dir, { recursive: true, force: true })
+  mkdirSync(dir, { recursive: true })
+}
+
+for (const { song, xml, lyrics } of builds) {
+  writeFileSync(join(OUTPUT_DIR, `${song.slug}.xml`), xml)
+  if (lyrics.length > 0) writeFileSync(join(LYRICS_DIR, `${song.slug}.json`), JSON.stringify(lyrics))
+}
+
+const songs = builds.map(({ song }) => song)
 songs.sort((a, b) => sortableTitle(a).localeCompare(sortableTitle(b), 'es'))
 writeFileSync(INDEX_FILE, JSON.stringify(songs))
 writeFileSync(SITEMAP_FILE, sitemap(songs))
